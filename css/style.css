@@ -284,6 +284,16 @@ button {
   opacity: 0.85;
 }
 
+.btn-sage {
+  background: var(--sage);
+  color: #FFFFFF;
+  border: 1px solid transparent;
+}
+
+.btn-sage:hover {
+  opacity: 0.85;
+}
+
 @media (prefers-color-scheme: dark) {
   .btn-primary {
     background: var(--text);
