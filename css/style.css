@@ -1,0 +1,1003 @@
+/* ============================================================
+   AutoDoc Landing — Murmur Design System
+   css/style.css
+   ============================================================ */
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  /* Backgrounds */
+  --bg: #FAFAF7;
+  --bg-deep: #F0EFE9;
+  --bg-card: #FFFFFF;
+  --bg-dark: #1A1A17;
+
+  /* Text */
+  --text: #1A1A17;
+  --text-secondary: #6B6A63;
+  --text-tertiary: #9C9B94;
+
+  /* Brand colours */
+  --sage: #7A9E7E;
+  --sage-light: #E8F0E8;
+  --sage-dark: #4A6B4E;
+  --clay: #C2886E;
+  --dusk: #8B7EAA;
+
+  /* Borders */
+  --border: rgba(26, 26, 23, 0.1);
+  --border-strong: rgba(26, 26, 23, 0.18);
+
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii */
+  --radius: 12px;
+  --radius-sm: 6px;
+  --radius-btn: 8px;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141413;
+    --bg-deep: #1C1C1A;
+    --bg-card: #1E1E1C;
+    --text: #E8E7E2;
+    --text-secondary: #9C9B94;
+    --text-tertiary: #6B6A63;
+    --border: rgba(232, 231, 226, 0.08);
+    --border-strong: rgba(232, 231, 226, 0.14);
+  }
+}
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+/* ============================================================
+   3. NAVIGATION
+   ============================================================ */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  height: 64px;
+  background: rgba(250, 250, 247, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav {
+    background: rgba(20, 20, 19, 0.85);
+  }
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile nav overlay */
+.nav-mobile {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.nav-mobile.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-mobile-close {
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.nav-mobile-close svg {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-mobile-links a {
+  font-size: 24px;
+  font-family: var(--font-display);
+  color: var(--text);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-mobile-links a:hover {
+  color: var(--sage);
+}
+
+.nav-mobile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+/* ============================================================
+   4. BUTTONS
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: var(--radius-btn);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--bg-dark);
+  color: #FAFAF7;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    background: var(--text);
+    color: var(--bg);
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-deep);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(232, 231, 226, 0.25);
+}
+
+.btn-ghost:hover {
+  background: rgba(232, 231, 226, 0.08);
+}
+
+/* Large button size modifier */
+.btn--lg {
+  padding: 13px 28px;
+  font-size: 15px;
+}
+
+/* ============================================================
+   5. BADGE
+   ============================================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 100px;
+  text-transform: uppercase;
+}
+
+.badge::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sage);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   6. SECTION HELPERS
+   ============================================================ */
+
+.section {
+  padding: 80px 60px;
+}
+
+.section--deep {
+  background-color: var(--bg-deep);
+}
+
+.section--dark {
+  background-color: var(--bg-dark);
+  color: #E8E7E2;
+}
+
+.section--dark .text-secondary,
+.section--dark .section-desc {
+  color: #9C9B94;
+}
+
+.section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.section--dark .section-title {
+  color: #E8E7E2;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.section-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 640px;
+}
+
+/* ============================================================
+   7. GRID LAYOUTS
+   ============================================================ */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ============================================================
+   8. SCREENSHOTS
+   ============================================================ */
+
+.screenshot {
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
+}
+
+.screenshot--dark {
+  background: var(--bg-dark);
+  padding: 24px;
+}
+
+.screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================================
+   9. FEATURE CHECKLIST
+   ============================================================ */
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checklist-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--sage);
+  margin-top: 1px;
+}
+
+.checklist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.checklist-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.checklist-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   10. TRUST BAR
+   ============================================================ */
+
+.trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding: 24px 60px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.trust-bar-item svg {
+  width: 16px;
+  height: 16px;
+  color: var(--sage);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   11. STATS CARD
+   ============================================================ */
+
+.stats-card {
+  background: var(--bg-deep);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--sage);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.stat-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ============================================================
+   12. PRINCIPLE CARDS
+   ============================================================ */
+
+.principle-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+
+.principle-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.principle-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   13. PRIVACY COMPARISON
+   ============================================================ */
+
+.privacy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.privacy-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+
+.privacy-card--local {
+  border-color: var(--sage);
+  border-width: 2px;
+}
+
+.privacy-card--servers {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.privacy-badge--local {
+  background: var(--sage-light);
+  color: var(--sage-dark);
+}
+
+.privacy-badge--servers {
+  background: rgba(139, 126, 170, 0.12);
+  color: var(--dusk);
+}
+
+.privacy-nothing {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin: 24px 0;
+}
+
+/* ============================================================
+   14. COMMITMENT LIST
+   ============================================================ */
+
+.commitment {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  border: 1px solid var(--border);
+}
+
+.commitment + .commitment {
+  margin-top: 12px;
+}
+
+.commitment-number {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--sage);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.commitment-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.commitment-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.commitment-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   15. HERO (HOMEPAGE)
+   ============================================================ */
+
+.hero {
+  position: relative;
+  padding: 100px 60px 80px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(122, 158, 126, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  margin-bottom: 24px;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.hero-headline em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.hero-meta {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   16. PAGE HERO (INNER PAGES)
+   ============================================================ */
+
+.page-hero {
+  padding: 72px 60px 64px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-hero--center .section-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-hero .hero-headline {
+  font-size: clamp(36px, 4vw, 52px);
+}
+
+/* ============================================================
+   17. CTA SECTION
+   ============================================================ */
+
+.cta-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   18. SCROLL ANIMATION
+   ============================================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ============================================================
+   19. FOOTER
+   ============================================================ */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 60px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.footer-links a {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   20. RESPONSIVE — 1024px
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 40px;
+  }
+
+  .section {
+    padding: 64px 40px;
+  }
+
+  .hero {
+    padding: 80px 40px 64px;
+  }
+
+  .page-hero {
+    padding: 56px 40px 48px;
+  }
+
+  .trust-bar {
+    padding: 24px 40px;
+    gap: 32px;
+  }
+
+  .footer {
+    padding: 28px 40px;
+  }
+
+  .grid-2 {
+    gap: 40px;
+  }
+}
+
+/* ============================================================
+   21. RESPONSIVE — 768px (mobile)
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Nav */
+  .nav {
+    padding: 0 20px;
+  }
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* Sections */
+  .section {
+    padding: 56px 20px;
+  }
+
+  .hero {
+    padding: 64px 20px 56px;
+  }
+
+  .page-hero {
+    padding: 48px 20px 40px;
+  }
+
+  /* Grids — single column */
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .privacy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Grid order reversal utility */
+  .grid-2--reverse-mobile > *:first-child {
+    order: 2;
+  }
+
+  .grid-2--reverse-mobile > *:last-child {
+    order: 1;
+  }
+
+  /* Hero CTAs — stack */
+  .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Trust bar — 2x2 grid */
+  .trust-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .trust-bar-item {
+    justify-content: center;
+  }
+
+  /* CTA buttons */
+  .cta-buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  /* Footer — stack */
+  .footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 32px 20px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Typography adjustments */
+  .section-desc {
+    font-size: 15px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+  }
+}
