@@ -322,9 +322,10 @@ button {
   background: rgba(232, 231, 226, 0.08);
 }
 
-.section--dark .btn-ghost {
-  color: #FAFAF7;
-  border-color: rgba(250, 250, 247, 0.3);
+.section--dark .btn-ghost,
+.section--dark .cta-buttons .btn-ghost {
+  color: #FAFAF7 !important;
+  border-color: rgba(250, 250, 247, 0.35);
 }
 
 .section--dark .btn-ghost:hover {
