@@ -284,7 +284,8 @@ button {
   opacity: 0.85;
 }
 
-.btn-sage {
+.btn-sage,
+.nav-links .btn-sage {
   background: var(--sage-dark);
   color: #FFFFFF;
   border: 1px solid transparent;
