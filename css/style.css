@@ -285,7 +285,7 @@ button {
 }
 
 .btn-sage {
-  background: var(--sage);
+  background: var(--sage-dark);
   color: #FFFFFF;
   border: 1px solid transparent;
 }
