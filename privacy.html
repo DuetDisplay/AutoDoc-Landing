@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy — AutoDoc</title>
+  <meta name="description" content="AutoDoc runs entirely on your machine. No servers, no accounts, no telemetry. This page explains exactly how your data stays private.">
+  <meta property="og:title" content="Privacy — AutoDoc">
+  <meta property="og:description" content="We can't see your data. By design.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="4" height="12" rx="2" fill="#7A9E7E"/>
+      <rect x="14" y="8" width="4" height="24" rx="2" fill="#7A9E7E"/>
+      <rect x="22" y="11" width="4" height="18" rx="2" fill="#7A9E7E"/>
+      <rect x="30" y="16" width="4" height="8" rx="2" fill="#7A9E7E"/>
+    </svg>
+    <span class="nav-wordmark">AutoDoc</span>
+  </a>
+  <div class="nav-links">
+    <a href="/features.html">Features</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="#" target="_blank">GitHub</a>
+    <a href="#" class="btn btn-primary" style="padding: 8px 18px; font-size: 13px;">Download</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <button class="nav-mobile-close" aria-label="Close">&times;</button>
+  <a href="/">Home</a>
+  <a href="/features.html">Features</a>
+  <a href="/about.html">About</a>
+  <a href="/privacy.html">Privacy</a>
+  <a href="#" target="_blank">GitHub</a>
+  <a href="#" class="btn btn-primary" style="margin-top: 16px; justify-content: center;">Download</a>
+</div>
+
+<section class="page-hero">
+  <div class="section-label">Privacy</div>
+  <h1 class="hero-headline">We can't see your data. <em>By design.</em></h1>
+  <p class="hero-sub">AutoDoc runs entirely on your machine. There are no servers to send data to, no accounts to sign into, and no analytics watching what you do. This page explains exactly how that works.</p>
+</section>
+
+<section class="section fade-in">
+  <div class="section-label">How it works</div>
+  <h2 class="section-title">What stays where.</h2>
+  <div class="privacy-grid" style="margin-top: 40px;">
+    <div class="privacy-card privacy-card--local">
+      <span class="privacy-badge privacy-badge--local">Your machine</span>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>Meeting recordings (video + audio)</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>Full transcripts</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>AI-generated summaries</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>Search index</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>All AI processing</span>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <span>App settings and preferences</span>
+        </div>
+      </div>
+    </div>
+    <div class="privacy-card privacy-card--servers">
+      <span class="privacy-badge privacy-badge--servers">Our servers</span>
+      <div class="privacy-nothing">Nothing.</div>
+      <p class="section-desc" style="max-width: 240px; text-align: center; font-size: 14px;">We don't operate servers. There's nowhere for your data to go.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--deep fade-in">
+  <div class="section-label">Our commitments</div>
+  <h2 class="section-title">Plain language, <em>no exceptions.</em></h2>
+  <div style="display: flex; flex-direction: column; gap: 20px; max-width: 640px; margin-top: 40px;">
+    <div class="commitment">
+      <span class="commitment-number">1</span>
+      <div>
+        <div class="commitment-title">No telemetry</div>
+        <div class="commitment-desc">AutoDoc does not phone home. No usage analytics, no crash reports, no "anonymous" data collection. We don't know how many users we have unless they tell us.</div>
+      </div>
+    </div>
+    <div class="commitment">
+      <span class="commitment-number">2</span>
+      <div>
+        <div class="commitment-title">No accounts</div>
+        <div class="commitment-desc">Download it, open it, use it. No email, no signup, no login. The optional Google Calendar connection syncs directly between Google and your device — AutoDoc never sits in the middle.</div>
+      </div>
+    </div>
+    <div class="commitment">
+      <span class="commitment-number">3</span>
+      <div>
+        <div class="commitment-title">No third-party AI</div>
+        <div class="commitment-desc">Transcription and summarization run on your hardware using open models. Your meeting audio is never sent to OpenAI, Google, or anyone else for processing.</div>
+      </div>
+    </div>
+    <div class="commitment">
+      <span class="commitment-number">4</span>
+      <div>
+        <div class="commitment-title">Verify it yourself</div>
+        <div class="commitment-desc">AutoDoc is open source under AGPL-3.0. Every line of code is public. If you don't trust our words, read our code.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section fade-in">
+  <h2 class="section-title">A note about <em>Google Calendar.</em></h2>
+  <p class="section-desc">AutoDoc can optionally connect to Google Calendar to name and organize your recordings. When you connect, Google sends your event titles and times directly to the app on your device — we're never in the middle. Nothing is stored on our servers because we don't have servers. The calendar data lives only on your machine, alongside everything else. The connection is entirely optional and can be removed at any time in Settings.</p>
+</section>
+
+<section class="section section--dark cta-section fade-in" style="padding: 60px;">
+  <h2 class="section-title" style="color: #FAFAF7;">Questions?</h2>
+  <p class="section-desc" style="max-width: 400px; margin-bottom: 28px;">Our code is the best privacy policy we can offer. But if you have specific questions, open an issue on GitHub.</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn btn-ghost" target="_blank">View source on GitHub</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <svg viewBox="0 0 40 40" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="4" height="12" rx="2" fill="#7A9E7E"/>
+      <rect x="14" y="8" width="4" height="24" rx="2" fill="#7A9E7E"/>
+      <rect x="22" y="11" width="4" height="18" rx="2" fill="#7A9E7E"/>
+      <rect x="30" y="16" width="4" height="8" rx="2" fill="#7A9E7E"/>
+    </svg>
+    <span>AutoDoc &copy; 2026</span>
+  </div>
+  <div class="footer-links">
+    <a href="/features.html">Features</a>
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="#" target="_blank">GitHub</a>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>
