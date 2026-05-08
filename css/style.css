@@ -409,6 +409,13 @@ button {
   padding: 80px 60px;
 }
 
+.section--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section--deep {
   background-color: var(--bg-deep);
 }
@@ -466,6 +473,11 @@ button {
   line-height: 1.7;
   color: var(--text-secondary);
   max-width: 640px;
+}
+
+.section--center .section-desc {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ============================================================
@@ -650,6 +662,14 @@ button {
   gap: 24px;
 }
 
+.section--center .privacy-grid {
+  width: 100%;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
 .privacy-card {
   background: var(--bg-card);
   border-radius: var(--radius);
@@ -749,6 +769,16 @@ button {
   line-height: 1.6;
 }
 
+.commitment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 40px;
+  text-align: left;
+}
+
 /* ============================================================
    15. HERO (HOMEPAGE)
    ============================================================ */
@@ -757,6 +787,13 @@ button {
   position: relative;
   padding: 100px 60px 80px;
   overflow: hidden;
+}
+
+.hero--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero::before {
@@ -788,6 +825,12 @@ button {
   max-width: 800px;
 }
 
+.hero--center .hero-headline,
+.hero--center .hero-sub {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-headline em {
   font-style: normal;
   color: var(--sage);
@@ -816,6 +859,11 @@ button {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 16px;
+}
+
+.hero--center .hero-ctas,
+.hero--center .hero-meta {
+  justify-content: center;
 }
 
 .hero-meta {
@@ -1022,6 +1070,10 @@ button {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+
+  .hero--center .hero-ctas {
+    align-items: center;
   }
 
   .hero-ctas .btn {
