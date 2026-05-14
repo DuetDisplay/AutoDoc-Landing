@@ -18,10 +18,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Build deploy directory
+        run: ./scripts/build-dist.sh
+
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=autodoc-landing
+          command: pages deploy dist --project-name=autodoc-landing
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
