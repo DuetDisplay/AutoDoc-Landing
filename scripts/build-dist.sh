@@ -15,7 +15,11 @@ mkdir -p dist/js
 mkdir -p dist/assets/screenshots
 
 copy_clean() {
-  ditto --norsrc "$1" "$2"
+  if command -v ditto >/dev/null 2>&1; then
+    ditto --norsrc "$1" "$2"
+  else
+    cp "$1" "$2"
+  fi
 }
 
 copy_clean index.html dist/index.html
