@@ -129,19 +129,26 @@
     <div class="commitment">
       <span class="commitment-number">3</span>
       <div>
-        <div class="commitment-title">Analytics are opt-in</div>
-        <div class="commitment-desc">Usage analytics and crash diagnostics are off by default. If you enable them, AutoDoc may send anonymous product and reliability data such as feature interactions, app version, and stack traces.</div>
+        <div class="commitment-title">Analytics and crash reporting are opt-in</div>
+        <div class="commitment-desc">Usage analytics and crash diagnostics are off by default. If you enable them, AutoDoc may send anonymous product and reliability data such as feature interactions, app version, operating system details, and stack traces.</div>
       </div>
     </div>
     <div class="commitment">
       <span class="commitment-number">4</span>
       <div>
-        <div class="commitment-title">Meeting content is not analytics payload</div>
-        <div class="commitment-desc">Meeting recordings, transcripts, summaries, participant names, and calendar contents are not intended to be sent as analytics or crash-report payloads.</div>
+        <div class="commitment-title">Diagnostic log uploads are separate and optional</div>
+        <div class="commitment-desc">If you explicitly enable technical log uploads, AutoDoc may attach a sanitized tail of recent app logs to error reports for debugging. This setting can stay off while analytics and crash reporting remain on.</div>
       </div>
     </div>
     <div class="commitment">
       <span class="commitment-number">5</span>
+      <div>
+        <div class="commitment-title">Meeting content is not diagnostics payload</div>
+        <div class="commitment-desc">Meeting recordings, transcripts, summaries, participant names, and calendar contents are not intended to be sent as analytics events, crash reports, or optional diagnostic log attachments.</div>
+      </div>
+    </div>
+    <div class="commitment">
+      <span class="commitment-number">6</span>
       <div>
         <div class="commitment-title">Google user data is not used to train shared AI models</div>
         <div class="commitment-desc">Google Calendar data is used only for AutoDoc features that you enable. It is not sold, not used for advertising, and not used to train or improve generalized or third-party AI models.</div>
@@ -161,11 +168,11 @@
     <h2 class="section-title">Privacy Policy.</h2>
   </div>
   <div class="legal-card legal-prose">
-    <p><strong>Last updated:</strong> May 15, 2026</p>
+    <p><strong>Last updated:</strong> May 18, 2026</p>
 
     <p>AutoDoc is a local-first desktop application that helps users record meetings, transcribe meeting audio on-device, and generate meeting notes locally. This Privacy Policy explains what information AutoDoc processes, how that information is used, and the choices users have.</p>
 
-    <p><strong>1. Information AutoDoc may process.</strong> Depending on which features you enable, AutoDoc may process meeting recordings, transcripts, speaker labels, summaries, notes, search indexes, local settings, and optional diagnostics data if you opt in to analytics or crash reporting. If you connect Google Calendar, AutoDoc may also process Google user data including your primary calendar email address, calendar event titles, start and end times, attendee email addresses, meeting links, recurring event identifiers, and OAuth tokens needed to maintain the optional calendar connection.</p>
+    <p><strong>1. Information AutoDoc may process.</strong> Depending on which features you enable, AutoDoc may process meeting recordings, transcripts, speaker labels, summaries, notes, search indexes, local settings, and optional diagnostics data if you opt in to analytics or crash reporting. If you separately enable technical log uploads, AutoDoc may also attach a sanitized tail of recent app logs to error reports. If you connect Google Calendar, AutoDoc may also process Google user data including your primary calendar email address, calendar event titles, start and end times, attendee email addresses, meeting links, recurring event identifiers, and OAuth tokens needed to maintain the optional calendar connection.</p>
 
     <p><strong>2. How AutoDoc uses information.</strong> AutoDoc uses information only to provide the app's features, including recording meetings, generating local transcripts and notes, showing upcoming calendar events, matching recordings to events, titling recordings, suggesting speaker names, and maintaining account connectivity for optional calendar integrations. Google user data is used only to provide or improve these user-facing features that you request inside AutoDoc.</p>
 
@@ -177,11 +184,11 @@
 
     <p><strong>6. Data retention and deletion.</strong> AutoDoc retains Google Calendar connection data only for as long as needed to provide the optional calendar features you choose to use. OAuth tokens and saved connected-account records remain on your device until you disconnect the calendar account or delete local AutoDoc data. Locally synced calendar data may continue to appear in the app until it is refreshed, disconnected, or removed with local app data. If Google Calendar information has already been copied into saved meeting metadata on your device, such as a meeting title, meeting link, attendee-based speaker suggestion, or recurring identifier associated with a recording, that local metadata may remain until you delete the related recording or reset local AutoDoc data. You can delete local AutoDoc data from the app, disconnect the Google account from AutoDoc, and revoke AutoDoc's access from your Google account permissions page.</p>
 
-    <p><strong>7. Optional analytics and crash reporting.</strong> Analytics and crash reporting are off by default unless you choose to enable them. If enabled, AutoDoc may send anonymous product usage and reliability data, such as onboarding completion, feature interactions, app version, operating system details, and crash stack traces. Meeting content, transcript text, calendar event contents, attendee lists, and OAuth tokens are not intended to be included in those analytics events.</p>
+    <p><strong>7. Optional analytics, crash reporting, and technical log uploads.</strong> Analytics and crash reporting are off by default unless you choose to enable them. If enabled, AutoDoc may send anonymous product usage and reliability data, such as onboarding completion, feature interactions, app version, operating system details, and crash stack traces. If you separately enable technical log uploads, AutoDoc may attach a sanitized tail of recent app logs to an error report to help diagnose failures. Meeting content, transcript text, calendar event contents, attendee lists, and OAuth tokens are not intended to be included in those analytics events, crash reports, or optional diagnostic log attachments.</p>
 
     <p><strong>8. Data sharing, transfer, and prohibited uses.</strong> AutoDoc is not designed to sell personal information or Google user data. Except as needed to operate the connected services you explicitly use, AutoDoc does not transfer or disclose Google user data to third parties for advertising, data brokering, or generalized model training. AutoDoc does not use Google user data to train, fine-tune, or improve generalized, shared, or third-party artificial intelligence or machine learning models.</p>
 
-    <p><strong>9. Third-party services.</strong> Some features may rely on third-party services, including Google APIs, Microsoft services, OAuth routing infrastructure, and optional analytics or diagnostics providers. Those services may process data needed to perform their role in the feature you choose to use.</p>
+    <p><strong>9. Third-party services.</strong> Some features may rely on third-party services, including Google APIs, Microsoft services, OAuth routing infrastructure, and optional analytics or diagnostics providers. Those services may process data needed to perform their role in the feature you choose to use, including opted-in crash reports and optional technical log attachments.</p>
 
     <p><strong>10. Your choices.</strong> You can decline optional analytics, disconnect calendar accounts, revoke provider permissions, and delete local AutoDoc data from your device.</p>
 
