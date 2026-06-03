@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260604b">
+  <link rel="stylesheet" href="css/style.css?v=20260604c">
 </head>
 <body>
 
@@ -65,7 +65,6 @@
 <section class="section fade-in">
   <div class="grid-2">
     <div>
-      <div class="section-label" style="color: var(--sage);">01</div>
       <h2 class="section-title">Detect meetings <em>automatically.</em></h2>
       <p class="section-desc">AutoDoc lives in your menu bar and detects active calls across Zoom, Meet, Teams, Webex, Slack, and Discord. A floating prompt asks if you want to start AI notes — no bot joins your meeting.</p>
       <div class="checklist">
@@ -92,14 +91,21 @@
         </div>
       </div>
     </div>
-    <div>
-      <div class="detection-panel" role="img" aria-label="Meeting detection prompt">
-        <div class="detection-panel-header">
-          <span class="detection-dot" aria-hidden="true"></span>
-          <span class="detection-panel-title">Team sync · detected</span>
+    <div class="detection-stage">
+      <div class="detection-toast" role="img" aria-label="AutoDoc meeting detection notification">
+        <span class="detection-toast-dot" aria-hidden="true"></span>
+        <div class="detection-toast-text">
+          <div class="detection-toast-title">Team sync</div>
+          <div class="detection-toast-subtitle">Would you like to start AI notes?</div>
         </div>
-        <p class="detection-panel-body">Would you like to start AI notes?</p>
-        <span class="btn btn-primary">Start AI Notes</span>
+        <div class="detection-toast-actions">
+          <span class="detection-toast-btn">Start AI Notes</span>
+          <span class="detection-toast-x" aria-hidden="true">
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <line x1="2" y1="2" x2="10" y2="10"/><line x1="10" y1="2" x2="2" y2="10"/>
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -113,7 +119,6 @@
       </div>
     </div>
     <div>
-      <div class="section-label" style="color: var(--sage);">02</div>
       <h2 class="section-title">The notes you'd write <em>if you had time.</em></h2>
       <p class="section-desc">After every meeting, Ollama extracts structured notes from the transcript. Long meetings are chunked so nothing important gets dropped.</p>
       <div class="checklist">
@@ -153,7 +158,6 @@
 <section class="section fade-in">
   <div class="grid-2">
     <div>
-      <div class="section-label" style="color: var(--sage);">03</div>
       <h2 class="section-title">One click to <em>capture everything.</em></h2>
       <p class="section-desc">Three simultaneous tracks — screen video, your microphone, and system audio — merged for transcription. See what's coming up, start manually, or let detection handle it.</p>
       <div class="checklist">
@@ -203,7 +207,6 @@
       </div>
     </div>
     <div>
-      <div class="section-label" style="color: var(--sage);">04</div>
       <h2 class="section-title">Search every <em>word.</em></h2>
       <p class="section-desc">Full-text search across all transcripts and structured notes. Every match is clickable — jump to the exact line in the transcript or notes tab with highlighting.</p>
       <div class="checklist">
@@ -229,7 +232,6 @@
 <section class="section fade-in">
   <div class="grid-2">
     <div>
-      <div class="section-label" style="color: var(--sage);">05</div>
       <h2 class="section-title">Ask your <em>meetings.</em></h2>
       <p class="section-desc">A dedicated Ask AI workspace for conversational questions — separate from keyword search. Answers are grounded in your transcripts, structured notes, and calendar using local Ollama.</p>
       <div class="checklist">
@@ -273,7 +275,6 @@
       </div>
     </div>
     <div>
-      <div class="section-label" style="color: var(--sage);">06</div>
       <h2 class="section-title">The full <em>picture.</em></h2>
       <p class="section-desc">Notes, transcript, and media in one place. Speaker labels with me/them detection, calendar-attendee rename suggestions, synced playback, and inline editing.</p>
       <div class="checklist">
@@ -306,7 +307,6 @@
 <section class="section fade-in">
   <div class="grid-2">
     <div>
-      <div class="section-label" style="color: var(--sage);">07</div>
       <h2 class="section-title">Encrypted at rest, <em>by default.</em></h2>
       <p class="section-desc">Every recording, transcript, and note is encrypted with AES-256-GCM. Keys live in the macOS Keychain. Whisper and Ollama models are managed locally — AutoDoc runs its own isolated Ollama instance.</p>
       <div class="checklist">
