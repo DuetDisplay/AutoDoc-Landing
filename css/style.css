@@ -1072,6 +1072,370 @@ button {
 }
 
 /* ============================================================
+   19b. HERO PILLS + EARLY-ACCESS NOTE
+   ============================================================ */
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.pill svg {
+  width: 13px;
+  height: 13px;
+  color: var(--sage);
+  flex-shrink: 0;
+}
+
+.hero-note {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.hero-note strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+/* Compatibility strip */
+.compat-bar {
+  text-align: center;
+  padding: 28px 60px;
+  border-bottom: 1px solid var(--border);
+}
+
+.compat-bar-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+}
+
+.compat-bar-apps {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.4vw, 24px);
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.compat-bar-apps span {
+  color: var(--sage);
+}
+
+/* ============================================================
+   19c. FEATURE GRID ("Why AutoDoc")
+   ============================================================ */
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.feature-card-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--sage-light);
+  color: var(--sage-dark);
+  margin-bottom: 16px;
+}
+
+.feature-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.feature-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.feature-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   19d. COMPARISON (generic, no competitor names)
+   ============================================================ */
+
+.compare {
+  width: 100%;
+  max-width: 920px;
+  margin: 40px auto 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-card);
+  text-align: left;
+}
+
+.compare-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  align-items: center;
+}
+
+.compare-row + .compare-row {
+  border-top: 1px solid var(--border);
+}
+
+.compare-row--head {
+  background: var(--bg-deep);
+}
+
+.compare-cell {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.compare-cell--label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.compare-cell--autodoc {
+  color: var(--text);
+  font-weight: 500;
+  border-left: 2px solid var(--sage);
+  background: var(--sage-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .compare-cell--autodoc {
+    background: rgba(122, 158, 126, 0.1);
+  }
+}
+
+.compare-cell--head {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ============================================================
+   19e. USE-CASE CARDS
+   ============================================================ */
+
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 44px;
+  text-align: left;
+}
+
+.usecase-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.usecase-card-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.usecase-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   19f. HOW IT WORKS (steps)
+   ============================================================ */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+  text-align: left;
+}
+
+.step {
+  position: relative;
+  padding-top: 16px;
+  border-top: 2px solid var(--sage);
+}
+
+.step-number {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sage-dark);
+  margin-bottom: 10px;
+}
+
+.step-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   19g. FAQ
+   ============================================================ */
+
+.faq-list {
+  width: 100%;
+  max-width: 760px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 4px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--sage);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '\2212';
+}
+
+.faq-answer {
+  padding: 0 4px 24px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 680px;
+}
+
+.faq-answer p + p {
+  margin-top: 12px;
+}
+
+.faq-answer code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg-deep);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--text);
+}
+
+/* ============================================================
+   19h. MEDIA PLACEHOLDER (for pending screenshots/demo)
+   ============================================================ */
+
+.media-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 280px;
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--bg-deep);
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: 32px;
+}
+
+.media-placeholder svg {
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+}
+
+.media-placeholder-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.media-placeholder-hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.media-placeholder--wide {
+  min-height: 360px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ============================================================
    20. RESPONSIVE — 1024px
    ============================================================ */
 
@@ -1266,5 +1630,51 @@ button {
 
   .hero-sub {
     font-size: 16px;
+  }
+
+  /* New components — single column */
+  .feature-grid,
+  .usecase-grid,
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .compat-bar {
+    padding: 24px 20px;
+  }
+
+  /* Comparison — stack each row */
+  .compare-row {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-row--head {
+    display: none;
+  }
+
+  .compare-cell {
+    padding: 12px 18px;
+  }
+
+  .compare-cell--label {
+    background: var(--bg-deep);
+    border-top: 1px solid var(--border);
+  }
+
+  .compare-cell--cloud::before {
+    content: 'Typical cloud tools: ';
+    font-weight: 600;
+    color: var(--text-tertiary);
+  }
+
+  .compare-cell--autodoc::before {
+    content: 'AutoDoc: ';
+    font-weight: 600;
+    color: var(--sage-dark);
+  }
+
+  .media-placeholder {
+    min-height: 200px;
   }
 }

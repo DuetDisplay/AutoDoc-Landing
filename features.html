@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Features — AutoDoc</title>
-  <meta name="description" content="AutoDoc captures, transcribes, and summarizes your meetings with structured notes, full-text search, AI Q&A, and synced playback — all running locally on your machine.">
+  <meta name="description" content="AutoDoc captures, transcribes, and summarizes your meetings with structured notes, full-text search, conversational Ask AI, and synced playback — all running on your machine.">
   <link rel="canonical" href="https://getautodoc.com/features">
   <meta property="og:title" content="Features — AutoDoc">
-  <meta property="og:description" content="Everything you need to capture and understand your meetings. Nothing you don't.">
+  <meta property="og:description" content="Everything you need to capture and understand your meetings, running on-device. Nothing you don't.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260511d">
+  <link rel="stylesheet" href="css/style.css?v=20260602a">
 </head>
 <body>
 
@@ -28,6 +28,7 @@
   <div class="nav-links">
     <a href="/features">Features</a>
     <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
     <a class="is-disabled" aria-disabled="true">GitHub Coming Soon</a>
@@ -44,6 +45,7 @@
     <a href="/">Home</a>
     <a href="/features">Features</a>
     <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
     <a class="is-disabled" aria-disabled="true">GitHub Coming Soon</a>
@@ -56,7 +58,7 @@
 <section class="page-hero page-hero--center">
   <div class="section-label">Features</div>
   <h1 class="hero-headline">Everything you need. <em>Nothing you don't.</em></h1>
-  <p class="section-desc">One app for upcoming meetings, local recording, grounded Ask AI, and searchable meeting history. All on your machine.</p>
+  <p class="section-desc">Auto-detected recording, on-device transcription, structured notes, full-text search, and a grounded Ask AI — all running on your machine.</p>
 </section>
 
 <!-- Feature 1: Summaries -->
@@ -65,34 +67,34 @@
     <div>
       <div class="section-label" style="color: var(--sage);">01</div>
       <h2 class="section-title">The notes you'd write <em>if you had time.</em></h2>
-      <p class="section-desc">After every meeting, AutoDoc produces a structured summary organized around what matters most.</p>
+      <p class="section-desc">After every meeting, AutoDoc produces a structured summary organized into five categories.</p>
       <div class="checklist">
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
             <div class="checklist-title">Decisions</div>
-            <div class="checklist-desc">What was decided, by whom, and the context behind it.</div>
+            <div class="checklist-desc">What was decided, by whom, and the reasoning behind it.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
             <div class="checklist-title">Action items</div>
-            <div class="checklist-desc">Tasks with owners and deadlines, pulled from the conversation.</div>
+            <div class="checklist-desc">Tasks pulled from the conversation, with owner and deadline when mentioned.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Metrics &amp; key topics</div>
-            <div class="checklist-desc">Numbers discussed, KPIs mentioned, and the topics that drove the conversation.</div>
+            <div class="checklist-title">Information shared, discussion &amp; status updates</div>
+            <div class="checklist-desc">Facts and figures, open questions and debates, and progress reports — each kept distinct.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
             <div class="checklist-title">Editable after the fact</div>
-            <div class="checklist-desc">Refine summaries and transcripts whenever you want. It's your data.</div>
+            <div class="checklist-desc">Refine notes and transcripts whenever you want. It's your data.</div>
           </div>
         </div>
       </div>
@@ -105,7 +107,7 @@
   </div>
 </section>
 
-<!-- Feature 2: Recording -->
+<!-- Feature 2: Capture & detection -->
 <section class="section section--deep fade-in">
   <div class="grid-2 grid-2--reverse-mobile">
     <div>
@@ -115,35 +117,35 @@
     </div>
     <div>
       <div class="section-label" style="color: var(--sage);">02</div>
-      <h2 class="section-title">One click to <em>capture everything.</em></h2>
-      <p class="section-desc">See what's coming up, start from the meeting itself, or let AutoDoc be ready when the call begins. Audio, video, and transcript stay captured locally.</p>
+      <h2 class="section-title">Capture everything, <em>without a bot.</em></h2>
+      <p class="section-desc">AutoDoc detects your calls and offers to start notes, then records screen, mic, and system audio together — locally, with no recorder joining the meeting.</p>
       <div class="checklist">
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Upcoming meetings</div>
-            <div class="checklist-desc">See today's schedule inside AutoDoc with fast recording controls right where you need them.</div>
+            <div class="checklist-title">Automatic meeting detection</div>
+            <div class="checklist-desc">Spots Zoom, Meet, Teams, Webex, Slack, and Discord calls and offers to start notes — then auto-stops when the meeting ends.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Google and Microsoft calendars</div>
-            <div class="checklist-desc">Connect Google Calendar or Microsoft Outlook so recordings are named and organized automatically.</div>
+            <div class="checklist-title">Multi-track recording</div>
+            <div class="checklist-desc">Screen video, your microphone, and system audio are captured as separate tracks for cleaner transcripts.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Auto-record controls</div>
-            <div class="checklist-desc">Choose off, once, or series for each meeting so recurring calls can capture themselves.</div>
+            <div class="checklist-title">Calendar auto-record</div>
+            <div class="checklist-desc">Connect Google Calendar or Microsoft Outlook and set each meeting to record off, once, or for the whole series.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Works offline</div>
-            <div class="checklist-desc">No internet required. Record and transcribe anywhere.</div>
+            <div class="checklist-title">Lives in your menu bar</div>
+            <div class="checklist-desc">Runs quietly in the background and shows your next meetings right from the tray. Works offline.</div>
           </div>
         </div>
       </div>
@@ -156,112 +158,155 @@
   <div class="grid-2">
     <div>
       <div class="section-label" style="color: var(--sage);">03</div>
-      <h2 class="section-title">Ask your <em>meetings.</em></h2>
-      <p class="section-desc">"What did we decide about the Q3 roadmap?" Ask a question, get an answer grounded in what was actually said, then jump straight into the underlying meeting if you want the full context.</p>
+      <h2 class="section-title">Find any <em>moment.</em></h2>
+      <p class="section-desc">Full-text search runs across everything you've captured and takes you straight to where it was said.</p>
       <div class="checklist">
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Full-text search</div>
-            <div class="checklist-desc">Find any word across every transcript and summary instantly.</div>
+            <div class="checklist-title">Across transcripts and notes</div>
+            <div class="checklist-desc">Search every word in every transcript and every structured note at once.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Dedicated Ask AI workspace</div>
-            <div class="checklist-desc">Ask questions in plain English and get grounded answers built from your notes and recent transcripts.</div>
+            <div class="checklist-title">Jump to the exact moment</div>
+            <div class="checklist-desc">Click a result and AutoDoc opens the meeting, scrolls to the match, and highlights it.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Jump back to the source</div>
-            <div class="checklist-desc">Search results can take you right to the matching note or transcript moment.</div>
+            <div class="checklist-title">Instant, on-device</div>
+            <div class="checklist-desc">Searches your local library directly — nothing is sent anywhere to make it work.</div>
           </div>
         </div>
       </div>
     </div>
     <div>
       <div class="screenshot">
-        <img src="assets/screenshots/search-page.png?v=20260511b" alt="AutoDoc search and AI Q&A">
+        <img src="assets/screenshots/search-page.png?v=20260511b" alt="AutoDoc full-text search">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Feature 4: Review -->
+<!-- Feature 4: Ask AI -->
 <section class="section section--deep fade-in">
   <div class="grid-2 grid-2--reverse-mobile">
     <div>
-      <div class="screenshot">
-        <img src="assets/screenshots/transcript-view.png?v=20260511b" alt="AutoDoc transcript with speaker diarization">
+      <!-- PLACEHOLDER: screenshot of the Ask AI chat page -->
+      <div class="media-placeholder" role="img" aria-label="Screenshot coming soon: Ask AI chat">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span class="media-placeholder-label">Screenshot coming soon</span>
+        <span class="media-placeholder-hint">Ask AI — conversational Q&amp;A</span>
       </div>
     </div>
     <div>
       <div class="section-label" style="color: var(--sage);">04</div>
-      <h2 class="section-title">The full <em>picture.</em></h2>
-      <p class="section-desc">Summary on the left, full transcript on the right. Audio playback synced to the text, speaker-aware transcripts, and edits whenever you need to clean something up.</p>
+      <h2 class="section-title">Ask your <em>meetings.</em></h2>
+      <p class="section-desc">A chat that answers questions grounded in your own meetings — not the open internet. "What did we commit to last week?" gets a real answer, drawn from your transcripts and notes.</p>
       <div class="checklist">
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Split-panel review</div>
-            <div class="checklist-desc">Structured summary and full transcript side by side.</div>
+            <div class="checklist-title">Conversational answers</div>
+            <div class="checklist-desc">Ask follow-up questions in plain English and get responses that stream back in a chat.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Synced audio playback</div>
-            <div class="checklist-desc">Skip, rewind, and scrub — the transcript follows along.</div>
+            <div class="checklist-title">Grounded across meetings</div>
+            <div class="checklist-desc">Answers are built from your transcripts and notes, pulling in the most relevant moments.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
-            <div class="checklist-title">Speaker labels and transcript cleanup</div>
-            <div class="checklist-desc">Identify who said what, rename speakers, and keep the transcript useful after the meeting.</div>
+            <div class="checklist-title">Runs on a local model</div>
+            <div class="checklist-desc">Your questions and meeting content stay on your machine.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 5: Review -->
+<section class="section fade-in">
+  <div class="grid-2">
+    <div>
+      <div class="section-label" style="color: var(--sage);">05</div>
+      <h2 class="section-title">The full <em>picture.</em></h2>
+      <p class="section-desc">Notes on one side, the full transcript on the other. Audio and video playback synced to the text, speaker-aware transcripts, and edits whenever you need them.</p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <div>
+            <div class="checklist-title">Synced playback</div>
+            <div class="checklist-desc">Skip, rewind, and scrub — the transcript follows along, and clicking text seeks the audio.</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <div>
+            <div class="checklist-title">Speaker identification</div>
+            <div class="checklist-desc">Color-coded speakers ("me" and "them" or Speaker 1, 2, 3…), with calendar attendees offered as rename suggestions.</div>
           </div>
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
           <div>
             <div class="checklist-title">Inline editing</div>
-            <div class="checklist-desc">Fix a name, add context, correct a quote — everything is editable.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section fade-in">
-  <div class="grid-2">
-    <div>
-      <div class="section-label" style="color: var(--sage);">05</div>
-      <h2 class="section-title">Encrypted at rest, <em>by default.</em></h2>
-      <p class="section-desc">Your recordings, transcripts, notes, and meeting metadata are encrypted on disk, so AutoDoc keeps a long memory without leaving loose files behind.</p>
-      <div class="checklist">
-        <div class="checklist-item">
-          <span class="checklist-icon">✓</span>
-          <div>
-            <div class="checklist-title">Recordings and notes protected locally</div>
-            <div class="checklist-desc">Meeting files are stored on your device in encrypted form.</div>
-          </div>
-        </div>
-        <div class="checklist-item">
-          <span class="checklist-icon">✓</span>
-          <div>
-            <div class="checklist-title">Works with local playback</div>
-            <div class="checklist-desc">You still get quick review, synced playback, and searchable history without giving up control.</div>
+            <div class="checklist-desc">Fix a name, correct a quote, or add context — the transcript and notes are fully editable.</div>
           </div>
         </div>
       </div>
     </div>
     <div>
       <div class="screenshot">
+        <img src="assets/screenshots/transcript-view.png?v=20260511b" alt="AutoDoc transcript with speaker diarization">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature 6: Privacy & encryption -->
+<section class="section section--deep fade-in">
+  <div class="grid-2 grid-2--reverse-mobile">
+    <div>
+      <div class="screenshot">
         <img src="assets/screenshots/meeting-review.png?v=20260511b" alt="AutoDoc encrypted local meeting history">
+      </div>
+    </div>
+    <div>
+      <div class="section-label" style="color: var(--sage);">06</div>
+      <h2 class="section-title">Private by <em>architecture.</em></h2>
+      <p class="section-desc">Privacy isn't a setting in AutoDoc — it's how the app is built. Processing happens on-device and your library is encrypted on disk.</p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <div>
+            <div class="checklist-title">On-device transcription &amp; notes</div>
+            <div class="checklist-desc">Audio and transcripts are never sent to the cloud for AI processing.</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <div>
+            <div class="checklist-title">AES-256-GCM at rest</div>
+            <div class="checklist-desc">Recordings, transcripts, and notes are encrypted on disk, with keys held in your macOS Keychain.</div>
+          </div>
+        </div>
+        <div class="checklist-item">
+          <span class="checklist-icon">✓</span>
+          <div>
+            <div class="checklist-title">Optional calendar, opt-in analytics</div>
+            <div class="checklist-desc">Calendar access is your choice, and diagnostics are off unless you turn them on.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -270,7 +315,7 @@
 <!-- Bottom CTA -->
 <section class="section cta-section fade-in">
   <h2 class="section-title">See for <em>yourself.</em></h2>
-  <p class="section-desc">Download AutoDoc and try it on your next meeting.</p>
+  <p class="section-desc">AutoDoc is coming to macOS first, with Windows in the works. Early access is opening soon.</p>
   <div class="cta-buttons">
     <a class="btn btn-primary is-disabled" aria-disabled="true">Mac Coming Soon</a>
     <a class="btn btn-primary is-disabled" aria-disabled="true">PC Coming Soon</a>
@@ -290,6 +335,7 @@
   <div class="footer-links">
     <a href="/features">Features</a>
     <a href="/about">About</a>
+    <a href="/faq">FAQ</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
     <a class="is-disabled" aria-disabled="true">GitHub Coming Soon</a>
