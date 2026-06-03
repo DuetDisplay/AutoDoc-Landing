@@ -12,6 +12,13 @@ from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent
 EXCLUDED_DIRS = {".git", ".wrangler", "__pycache__"}
+CLEAN_URLS = {
+    "/features": "features.html",
+    "/about": "about.html",
+    "/privacy": "privacy.html",
+    "/terms": "terms.html",
+    "/faq": "faq.html",
+}
 EXCLUDED_FILE_PREFIXES = ("._",)
 HTML_CONTENT_TYPES = ("text/html", "application/xhtml+xml")
 
@@ -89,6 +96,10 @@ class DevServerHandler(SimpleHTTPRequestHandler):
         if parsed.path == "/__codex_reload__":
             self.handle_reload_probe(parsed.query)
             return
+
+        mapped = CLEAN_URLS.get(parsed.path.rstrip("/") if parsed.path != "/" else parsed.path)
+        if mapped is not None:
+            self.path = f"/{mapped}{('?' + parsed.query) if parsed.query else ''}"
 
         super().do_GET()
 

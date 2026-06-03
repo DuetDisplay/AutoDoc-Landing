@@ -25,7 +25,9 @@ copy_clean() {
 copy_clean index.html dist/index.html
 copy_clean about.html dist/about.html
 copy_clean features.html dist/features.html
+copy_clean faq.html dist/faq.html
 copy_clean privacy.html dist/privacy.html
+copy_clean _redirects dist/_redirects
 copy_clean terms.html dist/terms.html
 copy_clean 404.html dist/404.html
 copy_clean robots.txt dist/robots.txt
