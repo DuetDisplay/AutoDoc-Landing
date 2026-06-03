@@ -1909,6 +1909,60 @@ button {
   color: var(--sage-dark);
 }
 
+.text-link--inline {
+  margin-top: 0;
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.credibility-duet {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.credibility-duet::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--local);
+  flex-shrink: 0;
+}
+
+.credibility-duet img {
+  border-radius: 50%;
+}
+
+.credibility-duet:hover {
+  color: var(--text-primary);
+}
+
+.stat-duet {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.stat-duet img {
+  border-radius: 50%;
+}
+
+.stat-duet .stat-number {
+  transition: color 0.15s ease;
+}
+
+.stat-duet:hover .stat-number {
+  color: var(--sage-dark);
+}
+
 /* ============================================================
    20. FOOTER
    ============================================================ */
