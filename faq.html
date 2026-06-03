@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — AutoDoc</title>
+  <meta name="description" content="Answers about AutoDoc: on-device AI, meeting detection, Search vs Ask AI, encryption, calendars, system requirements, and privacy.">
+  <link rel="canonical" href="https://getautodoc.com/faq">
+  <meta property="og:title" content="FAQ — AutoDoc">
+  <meta property="og:description" content="Common questions about AutoDoc's local AI meeting assistant.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260601">
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">
+    <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="4" height="12" rx="2" fill="#7A9E7E"/>
+      <rect x="14" y="8" width="4" height="24" rx="2" fill="#7A9E7E"/>
+      <rect x="22" y="11" width="4" height="18" rx="2" fill="#7A9E7E"/>
+      <rect x="30" y="16" width="4" height="8" rx="2" fill="#7A9E7E"/>
+    </svg>
+    <span class="nav-wordmark">AutoDoc</span>
+  </a>
+  <div class="nav-links">
+    <a href="/features">Features</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local">GitHub</a>
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local/releases/latest" class="btn btn-sage" style="padding: 8px 18px; font-size: 13px;">Download for Mac</a>
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local/releases/latest" class="btn btn-sage" style="padding: 8px 18px; font-size: 13px;">Download for Windows</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <button class="nav-mobile-close" aria-label="Close">&times;</button>
+  <div class="nav-mobile-links">
+    <a href="/">Home</a>
+    <a href="/features">Features</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local">GitHub</a>
+  </div>
+  <div class="nav-mobile-actions">
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local/releases/latest" class="btn btn-primary" style="justify-content: center;">Download AutoDoc</a>
+  </div>
+</div>
+
+<section class="page-hero page-hero--center">
+  <div class="section-label">FAQ</div>
+  <h1 class="hero-headline">Questions, <em>answered.</em></h1>
+  <p class="section-desc">Grounded in how AutoDoc actually works — on-device AI, local storage, optional calendars, and opt-in analytics.</p>
+</section>
+
+<section class="section section--center fade-in">
+  <div class="faq-list">
+
+    <div class="faq-item open">
+      <button class="faq-question" type="button" aria-expanded="true">
+        What is AutoDoc?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">AutoDoc is a local-first desktop meeting assistant. It records your screen, microphone, and system audio, transcribes with Whisper, identifies speakers, and generates structured notes with Ollama — all on your Mac. You can search across meetings, ask questions with Ask AI, and connect Google Calendar or Microsoft Outlook optionally.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        How is AutoDoc different from typical cloud meeting tools?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Cloud tools usually send your audio to their servers and join as a recording bot. AutoDoc captures from your device, runs AI locally, encrypts files on disk, and never sends meeting content to the cloud for transcription or summarization. You own the files on your machine.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        What's the difference between Search and Ask AI?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><strong>Search</strong> is keyword lookup across all transcripts and notes — every match deep-links to the exact line. <strong>Ask AI</strong> is a chat interface where you ask questions in plain English; it retrieves relevant meetings and answers using local Ollama, grounded in your transcripts, structured notes, and calendar.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Does a bot join my meeting?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">No. AutoDoc captures system audio, your microphone, and optionally your screen — the same way local screen recording works. No participant named "AutoDoc" joins your call, and you don't need host permission for a third-party bot.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Which meeting apps does AutoDoc support?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">AutoDoc detects and captures audio from Zoom, Google Meet, Microsoft Teams, Webex, Slack, Discord, and browser-based calls (Safari, Chrome, Edge, Arc, and others). Because it captures system audio, it works with virtually any meeting software.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        How does on-device AI work?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Transcription uses whisper.cpp with the large-v3 model (~3GB, downloaded on first use). Notes and Ask AI use a dedicated local Ollama instance (llama3.1 by default) that AutoDoc manages separately from any Ollama you may have installed. No meeting content is sent to the cloud for AI inference.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Does AutoDoc work offline?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Yes, after initial setup. Once Whisper and Ollama models are downloaded, you can record, transcribe, summarize, search, and use Ask AI without an internet connection. Calendar sync requires connectivity when you connect an account.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        What note categories does AutoDoc produce?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Structured notes are organized into five categories: Decisions, Action Items, Information Shared, Discussion, and Status Updates. Notes are inspired by patterns from High Output Management and fully editable after generation. AutoDoc also produces a Quick Recap and supports markdown export.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        What calendar accounts can I connect?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Google Calendar and Microsoft Outlook. Calendar access is optional — used to show upcoming meetings, name recordings, suggest speaker names from attendees, and set auto-record modes (off, once, or series). OAuth tokens are stored encrypted on your device.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Where is my data stored?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">On macOS, meeting data lives under <code>~/Library/Application Support/AutoDoc/</code> — recordings, transcripts, notes, and models. Everything is encrypted at rest. AutoDoc does not operate servers that store your meeting content.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        How is my data encrypted?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Recordings, transcripts, notes, and metadata are encrypted with AES-256-GCM. The encryption key is stored in the macOS Keychain via Electron safeStorage. Media files use chunked encryption so playback can decrypt on the fly.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        What are the system requirements?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">macOS 14 or later for Mac builds. Plan for ~3GB for the Whisper model plus Ollama model storage. A machine with 16GB RAM and an SSD is recommended for the best experience on long meetings. Windows builds are available from the GitHub releases page.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Is AutoDoc open source?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">AutoDoc is licensed under AGPL-3.0. The source repository is public, so you can inspect the code, build from source, or download the latest desktop release from GitHub.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Is AutoDoc free?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">AutoDoc is free to download. We may introduce paid tiers in the future for team or enterprise features, but the core local-first experience will remain accessible.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Does AutoDoc collect analytics?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Only if you opt in. Analytics and crash reporting are disabled by default. Meeting content is never included in diagnostics payloads. See our <a href="/privacy">privacy page</a> for full details.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        When can I download AutoDoc?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Download AutoDoc from the GitHub releases page. Desktop builds are published there alongside the source repository.</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--deep cta-section fade-in">
+  <h2 class="section-title">Still have <em>questions?</em></h2>
+  <p class="section-desc">Read our full privacy commitment or explore features in detail.</p>
+  <div class="cta-buttons">
+    <a href="/privacy" class="btn btn-secondary">Privacy</a>
+    <a href="/features" class="btn btn-primary">Features</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">
+    <svg viewBox="0 0 40 40" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="14" width="4" height="12" rx="2" fill="#7A9E7E"/>
+      <rect x="14" y="8" width="4" height="24" rx="2" fill="#7A9E7E"/>
+      <rect x="22" y="11" width="4" height="18" rx="2" fill="#7A9E7E"/>
+      <rect x="30" y="16" width="4" height="8" rx="2" fill="#7A9E7E"/>
+    </svg>
+    <span>AutoDoc &copy; 2026</span>
+  </div>
+  <div class="footer-links">
+    <a href="/features">Features</a>
+    <a href="/faq">FAQ</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/terms">Terms</a>
+    <a href="https://github.com/DuetDisplay/AutoDoc-Local">GitHub</a>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20260601"></script>
+</body>
+</html>
