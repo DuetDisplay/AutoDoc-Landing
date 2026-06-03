@@ -13,6 +13,7 @@ find dist -mindepth 1 -delete 2>/dev/null || true
 mkdir -p dist/css
 mkdir -p dist/js
 mkdir -p dist/assets/screenshots
+mkdir -p dist/assets/videos
 
 copy_clean() {
   if command -v ditto >/dev/null 2>&1; then
@@ -42,5 +43,8 @@ copy_clean assets/screenshots/dashboard.png dist/assets/screenshots/dashboard.pn
 copy_clean assets/screenshots/meeting-review.png dist/assets/screenshots/meeting-review.png
 copy_clean assets/screenshots/search-page.png dist/assets/screenshots/search-page.png
 copy_clean assets/screenshots/transcript-view.png dist/assets/screenshots/transcript-view.png
+
+copy_clean assets/duet-logo.png dist/assets/duet-logo.png
+copy_clean assets/videos/autodoc-core-features-demo.mp4 dist/assets/videos/autodoc-core-features-demo.mp4
 
 find dist \( -name '._*' -o -name '.__*' \) -type f -delete 2>/dev/null || true
