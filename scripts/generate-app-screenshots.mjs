@@ -19,6 +19,11 @@ const requireFromApp = createRequire(path.join(appRoot, 'package.json'))
 
 const { _electron: electron } = requireFromApp('@playwright/test')
 const ffmpegPath = requireFromApp('ffmpeg-static')
+const sharp = requireFromApp('sharp')
+
+// Meetings that should be seeded with a recorded screen video (so the app shows
+// the video player instead of the audio-only fallback in the transcript tab).
+const SCREEN_VIDEO_MEETING_IDS = new Set(['meeting-roadmap-q2'])
 
 const mainEntry = path.join(appRoot, 'out', 'main', 'index.js')
 
@@ -428,6 +433,51 @@ async function generateAudioTemplate(outputPath) {
   ])
 }
 
+// Builds a still "recorded meeting video" frame (matching the product demo
+// video styling) and encodes it to a short screen.webm so the app renders its
+// real video player in the transcript tab.
+async function generateScreenVideo(meetingDir) {
+  const pngPath = path.join(meetingDir, 'mock-screen.png')
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+      <rect width="1280" height="720" fill="#f7f6ef"/>
+      <rect x="64" y="56" width="1088" height="608" rx="28" fill="#ffffff" stroke="#ded8ca" stroke-width="3"/>
+      <rect x="64" y="56" width="1088" height="86" rx="28" fill="#eef4ee"/>
+      <text x="108" y="112" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="32" font-weight="700" fill="#2f352f">Product Roadmap Review</text>
+      <text x="900" y="112" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="22" fill="#5B8C6A">Recorded meeting video</text>
+      <rect x="108" y="188" width="470" height="256" rx="22" fill="#5B8C6A" opacity="0.16"/>
+      <circle cx="186" cy="280" r="44" fill="#5B8C6A"/>
+      <text x="156" y="294" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="32" font-weight="700" fill="#ffffff">CH</text>
+      <rect x="228" y="342" width="248" height="18" rx="9" fill="#5B8C6A" opacity="0.55"/>
+      <rect x="228" y="382" width="180" height="14" rx="7" fill="#5B8C6A" opacity="0.35"/>
+      <rect x="642" y="188" width="470" height="256" rx="22" fill="#7A8FB5" opacity="0.16"/>
+      <circle cx="720" cy="280" r="44" fill="#7A8FB5"/>
+      <text x="688" y="294" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="30" font-weight="700" fill="#ffffff">MA</text>
+      <rect x="762" y="342" width="248" height="18" rx="9" fill="#7A8FB5" opacity="0.55"/>
+      <rect x="762" y="382" width="180" height="14" rx="7" fill="#7A8FB5" opacity="0.35"/>
+      <rect x="108" y="498" width="1004" height="82" rx="18" fill="#fafaf7" stroke="#ded8ca"/>
+      <text x="142" y="550" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="24" fill="#2f352f">Decision: move transcript highlights into the Q3 roadmap.</text>
+      <circle cx="1064" cy="622" r="10" fill="#C4956A"/>
+      <circle cx="1094" cy="622" r="10" fill="#5B8C6A"/>
+      <circle cx="1124" cy="622" r="10" fill="#7A8FB5"/>
+    </svg>`
+  await sharp(Buffer.from(svg)).png().toFile(pngPath)
+  await execFileAsync(ffmpegPath, [
+    '-y',
+    '-loop',
+    '1',
+    '-i',
+    pngPath,
+    '-t',
+    '4',
+    '-c:v',
+    'libvpx-vp9',
+    '-pix_fmt',
+    'yuv420p',
+    path.join(meetingDir, 'screen.webm'),
+  ])
+}
+
 async function seedRecordings(userDataDir) {
   const recordingsDir = path.join(userDataDir, 'recordings')
   await ensureDir(recordingsDir)
@@ -451,6 +501,9 @@ async function seedRecordings(userDataDir) {
     await writeJson(path.join(meetingDir, 'segments.json'), meeting.segments)
     await writeJson(path.join(meetingDir, 'speakers.json'), meeting.speakers)
     await fs.copyFile(audioTemplate, path.join(meetingDir, 'mic.webm'))
+    if (SCREEN_VIDEO_MEETING_IDS.has(meeting.id)) {
+      await generateScreenVideo(meetingDir)
+    }
   }
 }
 
@@ -465,6 +518,79 @@ async function openRoute(page, route) {
   await pause(400)
 }
 
+// Native <video> does not reliably paint its first frame in a still screenshot,
+// so overlay the generated recorded-screen frame (with a video chrome) on top of
+// the player region — matching the product demo video.
+async function injectTranscriptVideoFallback(page, imageDataUrl) {
+  await page.evaluate((imageDataUrl) => {
+    document.querySelector('#demo-video-fallback')?.remove()
+    const video = document.querySelector('video')
+    if (!video) return
+    const rect = video.getBoundingClientRect()
+    const fallback = document.createElement('div')
+    fallback.id = 'demo-video-fallback'
+    fallback.innerHTML = `
+      <img src="${imageDataUrl}" alt="" />
+      <div class="demo-video-controls">
+        <span class="demo-play">▶</span>
+        <span>0:00</span>
+        <span class="demo-timeline"><span></span></span>
+        <span>47:00</span>
+      </div>
+    `
+    Object.assign(fallback.style, {
+      position: 'fixed',
+      left: `${rect.left}px`,
+      top: `${rect.top}px`,
+      width: `${rect.width}px`,
+      height: `${rect.height}px`,
+      zIndex: '2147483000',
+      overflow: 'hidden',
+      background: '#141414',
+      pointerEvents: 'none',
+    })
+    const style = document.createElement('style')
+    style.id = 'demo-video-fallback-style'
+    style.textContent = `
+      #demo-video-fallback img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #demo-video-fallback .demo-video-controls {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: grid;
+        grid-template-columns: auto auto 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 18px;
+        color: #fff;
+        font: 600 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.62));
+      }
+      #demo-video-fallback .demo-play { font-size: 14px; }
+      #demo-video-fallback .demo-timeline {
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.34);
+        overflow: hidden;
+      }
+      #demo-video-fallback .demo-timeline span {
+        display: block;
+        width: 6%;
+        height: 100%;
+        background: #ffffff;
+      }
+    `
+    document.head.appendChild(style)
+    document.body.appendChild(fallback)
+  }, imageDataUrl)
+}
+
 async function setWindowSize(electronApp) {
   await electronApp.evaluate(async ({ BrowserWindow }) => {
     const win = BrowserWindow.getAllWindows()[0]
@@ -475,7 +601,7 @@ async function setWindowSize(electronApp) {
   })
 }
 
-async function captureShots(page, outputDirPath) {
+async function captureShots(page, outputDirPath, mockScreenDataUrl) {
   await openRoute(page, '#/')
   await page.getByRole('heading', { name: 'Upcoming', exact: true }).waitFor()
   await page.screenshot({ path: path.join(outputDirPath, 'dashboard.png') })
@@ -486,8 +612,20 @@ async function captureShots(page, outputDirPath) {
 
   await page.getByRole('button', { name: 'Transcript', exact: true }).click()
   await page.getByText('We should move transcript highlights into the Q3 roadmap', { exact: false }).waitFor()
-  await pause(500)
+  // Recorded-screen video is present, so the app renders its real video player.
+  // Overlay the generated frame so the still shows content instead of a black box.
+  await page.locator('video').first().waitFor({ state: 'visible', timeout: 10_000 })
+  await pause(300)
+  if (mockScreenDataUrl) {
+    await injectTranscriptVideoFallback(page, mockScreenDataUrl)
+  }
+  await pause(400)
   await page.screenshot({ path: path.join(outputDirPath, 'transcript-view.png') })
+  // Remove the fixed overlay so it doesn't bleed into later screenshots.
+  await page.evaluate(() => {
+    document.querySelector('#demo-video-fallback')?.remove()
+    document.querySelector('#demo-video-fallback-style')?.remove()
+  })
 
   await openRoute(page, '#/search')
   const input = page.getByPlaceholder('Search across all meetings...')
@@ -524,7 +662,12 @@ async function main() {
     await setWindowSize(electronApp)
     await page.waitForLoadState('domcontentloaded')
     await page.getByText('AutoDoc', { exact: true }).waitFor()
-    await captureShots(page, outputDir)
+    const mockScreenPath = path.join(userDataDir, 'recordings', 'meeting-roadmap-q2', 'mock-screen.png')
+    let mockScreenDataUrl = null
+    if (existsSync(mockScreenPath)) {
+      mockScreenDataUrl = `data:image/png;base64,${(await fs.readFile(mockScreenPath)).toString('base64')}`
+    }
+    await captureShots(page, outputDir, mockScreenDataUrl)
     console.log(`Saved refreshed screenshots to ${outputDir}`)
   } finally {
     await electronApp.close().catch(() => {})
