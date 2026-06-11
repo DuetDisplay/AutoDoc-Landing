@@ -25,6 +25,8 @@
   --sage: #7A9E7E;
   --sage-light: #E8F0E8;
   --sage-dark: #4A6B4E;
+  --duet-blue: #2583FD;
+  --duet-blue-dark: #1D6FDB;
   --dusk: #8B7EAA;
   --slate-blue: #6F87A3;
   --teal: #6AA7A3;
@@ -498,6 +500,18 @@ button {
     letter-spacing 0.2s ease,
     font-weight 0.2s ease,
     transform 0.2s ease;
+}
+
+.origin-title .brand-word {
+  font-weight: 800;
+}
+
+.brand-word--duet {
+  color: var(--duet-blue);
+}
+
+.brand-word--autodoc {
+  color: var(--sage-dark);
 }
 
 .section-desc {
@@ -1977,11 +1991,12 @@ button {
 }
 
 .stat-duet .stat-number {
+  color: var(--duet-blue);
   transition: color 0.15s ease;
 }
 
 .stat-duet:hover .stat-number {
-  color: var(--sage-dark);
+  color: var(--duet-blue-dark);
 }
 
 /* ============================================================
