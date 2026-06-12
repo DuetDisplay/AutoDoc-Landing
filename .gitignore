@@ -4,3 +4,8 @@
 __pycache__/
 ._*
 dist/
+
+# Agent / editor tooling (not part of the site)
+.agents/
+.cursor/
+skills-lock.json
