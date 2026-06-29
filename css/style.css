@@ -25,6 +25,8 @@
   --sage: #7A9E7E;
   --sage-light: #E8F0E8;
   --sage-dark: #4A6B4E;
+  --github: #24292F;
+  --github-hover: #111820;
   --duet-blue: #2583FD;
   --duet-blue-dark: #1D6FDB;
   --dusk: #8B7EAA;
@@ -157,10 +159,10 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 26px;
+  gap: 18px;
 }
 
-.nav-links a {
+.nav-links a:not(.btn) {
   font-size: 13px;
   font-weight: 500;
   color: var(--text-secondary);
@@ -168,7 +170,7 @@ button {
   transition: color 0.2s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:not(.btn):hover {
   color: var(--text);
 }
 
@@ -260,6 +262,10 @@ button {
   transition: color 0.2s ease;
 }
 
+.nav-mobile-links a.btn {
+  font-size: 14px;
+}
+
 .nav-mobile-links a:hover {
   color: var(--sage);
 }
@@ -276,8 +282,13 @@ button {
 .nav-mobile-actions {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
   margin-top: 32px;
+}
+
+.nav-mobile-actions .btn {
+  width: min(100%, 260px);
 }
 
 /* ============================================================
@@ -299,6 +310,29 @@ button {
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
   white-space: nowrap;
   cursor: pointer;
+}
+
+.btn:focus-visible,
+.nav a:focus-visible,
+.footer a:focus-visible {
+  outline: 2px solid var(--sage-dark);
+  outline-offset: 3px;
+}
+
+.btn--nav {
+  min-height: 38px;
+  padding: 9px 14px;
+  font-size: 13px;
+}
+
+.btn-icon::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  background: currentColor;
+  -webkit-mask: var(--btn-icon) center / contain no-repeat;
+  mask: var(--btn-icon) center / contain no-repeat;
 }
 
 .btn-primary {
@@ -323,6 +357,24 @@ button {
 
 .btn-sage:hover {
   background: var(--sage-dark);
+}
+
+.btn-github {
+  --btn-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.18 1.18A11.07 11.07 0 0 1 12 6.13c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.04c0 .31.2.67.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z'/%3E%3C/svg%3E");
+  background: var(--github);
+  color: #FFFFFF;
+  border: 1px solid var(--github);
+  box-shadow: 0 10px 24px rgba(26, 26, 23, 0.14);
+}
+
+.btn-github:hover {
+  background: var(--github-hover);
+  border-color: var(--github-hover);
+  transform: translateY(-1px);
+}
+
+.btn-download {
+  --btn-icon: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z'/%3E%3C/svg%3E");
 }
 
 .btn.is-disabled,
@@ -2043,6 +2095,22 @@ button {
   color: var(--text-tertiary);
 }
 
+.footer-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.footer-github::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.18 1.18A11.07 11.07 0 0 1 12 6.13c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.04c0 .31.2.67.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.02c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.18 1.18A11.07 11.07 0 0 1 12 6.13c.98 0 1.96.13 2.88.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14v3.04c0 .31.2.67.79.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
 .footer-copy {
   font-size: 13px;
   color: var(--text-tertiary);
@@ -2120,6 +2188,17 @@ button {
 
   .grid-2 {
     gap: 40px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
   }
 }
 
@@ -2226,7 +2305,7 @@ button {
   }
 
   .hero-ctas .btn {
-    width: 100%;
+    width: min(100%, 260px);
     justify-content: center;
   }
 
@@ -2252,7 +2331,7 @@ button {
   }
 
   .cta-buttons .btn {
-    width: 100%;
+    width: min(100%, 260px);
   }
 
   /* Footer — stack */
