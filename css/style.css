@@ -399,11 +399,6 @@ button {
 }
 
 @media (prefers-color-scheme: dark) {
-  .btn-primary {
-    background: var(--text);
-    color: var(--bg);
-  }
-
   .btn-primary.is-disabled,
   .btn-sage.is-disabled,
   .nav-links .btn-sage.is-disabled {
