@@ -33,7 +33,7 @@
     <a href="/terms">Terms</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon btn--nav" target="_blank" rel="noopener">View on GitHub</a>
     <a href="/download-mac" class="btn btn-sage btn-download btn-icon btn--nav">Download macOS</a>
-    <span class="btn btn-secondary is-disabled btn--nav" aria-disabled="true">Windows coming soon</span>
+    <a href="/download-windows" class="btn btn-sage btn-download btn-icon btn--nav">Download Windows</a>
   </div>
   <button class="nav-hamburger" aria-label="Menu">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
@@ -51,8 +51,8 @@
   </div>
   <div class="nav-mobile-actions">
     <a href="/download-mac" class="btn btn-primary btn-download btn-icon">Download for macOS</a>
+    <a href="/download-windows" class="btn btn-primary btn-download btn-icon">Download for Windows</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon" target="_blank" rel="noopener">View on GitHub</a>
-    <span class="btn btn-secondary is-disabled" aria-disabled="true">Windows coming soon</span>
   </div>
 </div>
 
@@ -60,7 +60,7 @@
   <div class="badge">Private meeting intelligence · local-first AI</div>
   <p class="hero-category">Records, transcribes, summarizes, searches, and answers questions across your meetings, locally.</p>
   <h1 class="hero-headline">Private AI meeting notes,<br><em>recorded locally.</em></h1>
-  <p class="hero-sub">AutoDoc records your screen alongside microphone and system audio — so you can see what was shared, not just read what was said. Whisper and Ollama turn it all into structured notes on your computer. No recorder bot joins your call, and nothing leaves your computer.</p>
+  <p class="hero-sub">AutoDoc records your screen alongside microphone and system audio — so you can see what was shared, not just read what was said. Local transcription and Ollama turn it all into structured notes on your computer. No recorder bot joins your call, and nothing leaves your computer.</p>
   <div class="hero-pills">
     <span class="hero-pill">Zoom · Meet · Teams · Webex · Slack · Discord</span>
     <span class="hero-pill">Works offline</span>
@@ -69,10 +69,10 @@
   </div>
   <div class="hero-ctas">
     <a href="/download-mac" class="btn btn-primary btn-download btn-icon">Download for macOS</a>
+    <a href="/download-windows" class="btn btn-primary btn-download btn-icon">Download for Windows</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon" target="_blank" rel="noopener">View on GitHub</a>
-    <span class="btn btn-secondary is-disabled" aria-disabled="true">Windows coming soon</span>
   </div>
-  <p class="launch-note">macOS available now · Source on GitHub · Windows coming soon</p>
+  <p class="launch-note">Available for macOS and Windows · Source on GitHub</p>
   <div class="hero-proof">
     <div class="proof-card">
       <span class="proof-card-kicker">Capture</span>
@@ -81,13 +81,13 @@
     </div>
     <div class="proof-card">
       <span class="proof-card-kicker">AI</span>
-      <strong>Whisper + Ollama</strong>
-      <span>Transcription and notes run locally.</span>
+      <strong>Local AI on both platforms</strong>
+      <span>Parakeet on Windows. MLX Whisper on macOS. Ollama notes on both.</span>
     </div>
     <div class="proof-card">
       <span class="proof-card-kicker">Storage</span>
       <strong>Encrypted on disk</strong>
-      <span>Keys stay in your macOS Keychain.</span>
+      <span>Keys are protected by macOS Keychain or Windows DPAPI.</span>
     </div>
   </div>
 </section>
@@ -99,8 +99,8 @@
     From the creators of Duet
   </a>
   <span>Desktop app, local-first</span>
-  <span>macOS available now</span>
-  <span>Windows coming soon</span>
+  <span>macOS 14+ · Apple Silicon</span>
+  <span>Windows 10+ · x64</span>
 </div>
 
 <section class="section feature-showcase-section fade-in">
@@ -179,7 +179,7 @@
     </div>
     <div class="chat-preview" role="img" aria-label="Example Ask AI conversation">
       <div class="chat-bubble chat-bubble--user">What action items came out of yesterday's product sync?</div>
-      <div class="chat-bubble chat-bubble--assistant">From Product sync (Mar 14): Maya will tighten onboarding copy by Friday. Chris will add Windows build signing before the next beta.</div>
+      <div class="chat-bubble chat-bubble--assistant">From Product sync (Mar 14): Maya will tighten onboarding copy by Friday. Chris will publish the launch checklist before the next release.</div>
     </div>
   </div>
 </section>
@@ -223,7 +223,7 @@
     </div>
     <div class="compare-highlight">
       <strong>Local AI</strong>
-      <span>Whisper and Ollama run on your computer, not vendor servers.</span>
+      <span>Transcription and Ollama run on your computer, not vendor servers.</span>
     </div>
     <div class="compare-highlight">
       <strong>Screen context</strong>
@@ -248,7 +248,7 @@
         <tr>
           <td>AI processing</td>
           <td><span class="compare-miss">Runs on vendor servers</span></td>
-          <td><span class="compare-win">Whisper + Ollama on your computer</span></td>
+          <td><span class="compare-win">Local transcription + Ollama</span></td>
         </tr>
         <tr>
           <td>Your files</td>
@@ -311,7 +311,7 @@
         What is AutoDoc?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">AutoDoc is a local-first desktop app for macOS that records screen video, microphone, and system audio, transcribes with Whisper, identifies speakers, and generates structured AI notes with Ollama, all on your machine.</div>
+      <div class="faq-answer">AutoDoc is a local-first desktop app for macOS and Windows. It records screen video, microphone, and system audio, transcribes on-device, identifies speakers, and generates structured AI notes with Ollama — all on your machine.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button" aria-expanded="false">
@@ -348,12 +348,12 @@
     </div>
     <div class="closing-card closing-card--availability">
       <div class="section-label">Availability</div>
-      <h2 class="closing-title">macOS is available now. Windows is coming soon.</h2>
-      <p>Download AutoDoc for macOS or inspect the source on GitHub. The Windows build is the next release target.</p>
+      <h2 class="closing-title">Now available for macOS and Windows.</h2>
+      <p>Choose your platform and keep every recording, transcript, and note on your own computer.</p>
       <div class="cta-buttons cta-buttons--left">
         <a href="/download-mac" class="btn btn-primary btn-download btn-icon">Download for macOS</a>
+        <a href="/download-windows" class="btn btn-primary btn-download btn-icon">Download for Windows</a>
         <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon" target="_blank" rel="noopener">View on GitHub</a>
-        <span class="btn btn-secondary is-disabled" aria-disabled="true">Windows coming soon</span>
       </div>
     </div>
   </div>

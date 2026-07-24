@@ -30,6 +30,7 @@ copy_clean faq.html dist/faq.html
 copy_clean privacy.html dist/privacy.html
 copy_clean terms.html dist/terms.html
 copy_clean download-mac.html dist/download-mac.html
+copy_clean download-windows.html dist/download-windows.html
 copy_clean 404.html dist/404.html
 copy_clean robots.txt dist/robots.txt
 copy_clean sitemap.xml dist/sitemap.xml

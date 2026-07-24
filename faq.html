@@ -33,7 +33,7 @@
     <a href="/terms">Terms</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon btn--nav" target="_blank" rel="noopener">View on GitHub</a>
     <a href="/download-mac" class="btn btn-sage btn-download btn-icon btn--nav">Download macOS</a>
-    <span class="btn btn-secondary is-disabled btn--nav" aria-disabled="true">Windows coming soon</span>
+    <a href="/download-windows" class="btn btn-sage btn-download btn-icon btn--nav">Download Windows</a>
   </div>
   <button class="nav-hamburger" aria-label="Menu">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
@@ -51,8 +51,8 @@
   </div>
   <div class="nav-mobile-actions">
     <a href="/download-mac" class="btn btn-primary btn-download btn-icon">Download for macOS</a>
+    <a href="/download-windows" class="btn btn-primary btn-download btn-icon">Download for Windows</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="btn btn-github btn-icon" target="_blank" rel="noopener">View on GitHub</a>
-    <span class="btn btn-secondary is-disabled" aria-disabled="true">Windows coming soon</span>
   </div>
 </div>
 
@@ -70,7 +70,7 @@
         What is AutoDoc?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">AutoDoc is a local-first desktop meeting assistant. It records screen video, microphone, and system audio, transcribes with Whisper, identifies speakers, and generates structured notes with Ollama — all on your computer. You can search across meetings, ask questions with Ask AI, and connect Google Calendar or Microsoft Outlook optionally.</div>
+      <div class="faq-answer">AutoDoc is a local-first desktop meeting assistant for macOS and Windows. It records screen video, microphone, and system audio, transcribes on-device, identifies speakers, and generates structured notes with Ollama — all on your computer. You can search across meetings, ask questions with Ask AI, and optionally connect Google Calendar or Microsoft Outlook.</div>
     </div>
 
     <div class="faq-item">
@@ -110,7 +110,7 @@
         How does on-device AI work?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Transcription uses whisper.cpp with the large-v3 model (~3GB, downloaded on first use). Notes and Ask AI use a dedicated local Ollama instance (llama3.1 by default) that AutoDoc manages separately from any Ollama you may have installed. No meeting content is sent to the cloud for AI inference.</div>
+      <div class="faq-answer">Windows uses Parakeet TDT 0.6B v3 and automatically selects DirectML GPU acceleration or a CPU-optimized model. Apple Silicon Macs use MLX Whisper with distil-large-v3. Notes and Ask AI use a dedicated local Ollama instance that AutoDoc manages separately from any Ollama you may have installed. No meeting content is sent to the cloud for AI inference.</div>
     </div>
 
     <div class="faq-item">
@@ -118,7 +118,7 @@
         Does AutoDoc work offline?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Yes, after initial setup. Once Whisper and Ollama models are downloaded, you can record, transcribe, summarize, search, and use Ask AI without an internet connection. Calendar sync requires connectivity when you connect an account.</div>
+      <div class="faq-answer">Yes, after initial setup. Once the platform-specific transcription model and Ollama model are downloaded, you can record, transcribe, summarize, search, and use Ask AI without an internet connection. Calendar sync requires connectivity when you connect an account.</div>
     </div>
 
     <div class="faq-item">
@@ -142,7 +142,7 @@
         Where is my data stored?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">On macOS, meeting data lives under <code>~/Library/Application Support/AutoDoc/</code> — recordings, transcripts, notes, and models. Everything is encrypted at rest. AutoDoc does not operate servers that store your meeting content.</div>
+      <div class="faq-answer">Meeting data lives under <code>~/Library/Application Support/AutoDoc/</code> on macOS and <code>%APPDATA%\AutoDoc\</code> on Windows — including recordings, transcripts, notes, and models. Meeting data is encrypted at rest. AutoDoc does not operate servers that store your meeting content.</div>
     </div>
 
     <div class="faq-item">
@@ -150,7 +150,7 @@
         How is my data encrypted?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Recordings, transcripts, notes, and metadata are encrypted with AES-256-GCM. The encryption key is stored in the macOS Keychain via Electron safeStorage. Media files use chunked encryption so playback can decrypt on the fly.</div>
+      <div class="faq-answer">Recordings, transcripts, notes, and metadata are encrypted with AES-256-GCM. Electron safeStorage protects the encryption key with macOS Keychain on Mac and DPAPI on Windows. Media files use chunked encryption so playback can decrypt on the fly.</div>
     </div>
 
     <div class="faq-item">
@@ -158,7 +158,7 @@
         What are the system requirements?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">macOS 14 or later for Mac builds. Plan for ~3GB for the Whisper model plus Ollama model storage. A machine with 16GB RAM and an SSD is recommended for the best experience on long meetings. Windows support is coming soon.</div>
+      <div class="faq-answer">Mac builds require macOS 14 or later on Apple Silicon. Windows builds require 64-bit Windows 10 or later on an x64 Intel or AMD processor. Both platforms require 8GB RAM; 16GB and about 10GB free storage are recommended. A compatible Windows DirectML GPU with 4GB+ VRAM is optional — AutoDoc falls back to CPU transcription automatically.</div>
     </div>
 
     <div class="faq-item">
@@ -166,7 +166,7 @@
         Is AutoDoc open source?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">AutoDoc is licensed under AGPL-3.0. The source repository is public, so you can inspect the code, build from source, or download the latest macOS release from GitHub. Windows support is coming soon.</div>
+      <div class="faq-answer">AutoDoc is licensed under AGPL-3.0. The source repository is public, so you can inspect the code, build from source, or download the latest macOS and Windows releases from GitHub.</div>
     </div>
 
     <div class="faq-item">
@@ -190,7 +190,7 @@
         When can I download AutoDoc?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Download AutoDoc for macOS from the GitHub releases page. The source repository is public, and Windows support is coming soon.</div>
+      <div class="faq-answer">AutoDoc is available now for macOS and Windows. Use the platform download buttons on this site or open the latest GitHub release.</div>
     </div>
 
   </div>
