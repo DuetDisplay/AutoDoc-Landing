@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Downloading AutoDoc for Windows</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20260629b">
+</head>
+<body>
+<section class="page-hero page-hero--center">
+  <div class="section-label">Download</div>
+  <h1 class="hero-headline">Preparing your <em>Windows download.</em></h1>
+  <p class="hero-sub">AutoDoc is finding the latest Windows installer on GitHub. If the download does not start, open the latest release manually.</p>
+  <div class="hero-ctas">
+    <a id="manual-release-link" href="https://github.com/DuetDisplay/AutoDoc/releases/latest" class="btn btn-github btn-icon" target="_blank" rel="noopener">Open latest release</a>
+    <a href="/" class="btn btn-secondary">Back to AutoDoc</a>
+  </div>
+</section>
+<script>
+(() => {
+  const latestReleaseUrl = 'https://github.com/DuetDisplay/AutoDoc/releases/latest';
+  const latestReleaseApi = 'https://api.github.com/repos/DuetDisplay/AutoDoc/releases/latest';
+
+  fetch(latestReleaseApi, {
+    headers: {
+      Accept: 'application/vnd.github+json'
+    }
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Latest release is not publicly available.');
+      }
+      return response.json();
+    })
+    .then((release) => {
+      const assets = Array.isArray(release.assets) ? release.assets : [];
+      const installer = assets.find((asset) => (
+        typeof asset.name === 'string' &&
+        /-setup\.exe$/i.test(asset.name) &&
+        typeof asset.browser_download_url === 'string'
+      ));
+
+      window.location.replace(installer ? installer.browser_download_url : latestReleaseUrl);
+    })
+    .catch(() => {
+      window.location.replace(latestReleaseUrl);
+    });
+})();
+</script>
+</body>
+</html>
