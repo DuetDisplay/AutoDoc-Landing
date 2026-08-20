@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260629b">
+  <link rel="stylesheet" href="css/style.css?v=20260820">
 </head>
 <body>
 
@@ -153,12 +153,38 @@
       <div class="faq-answer">Recordings, transcripts, notes, and metadata are encrypted with AES-256-GCM. Electron safeStorage protects the encryption key with macOS Keychain on Mac and DPAPI on Windows. Media files use chunked encryption so playback can decrypt on the fly.</div>
     </div>
 
-    <div class="faq-item">
-      <button class="faq-question" type="button" aria-expanded="false">
+    <div class="faq-item open" id="requirements">
+      <button class="faq-question" type="button" aria-expanded="true">
         What are the system requirements?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Mac builds require macOS 14 or later on Apple Silicon. Windows builds require 64-bit Windows 10 or later on an x64 Intel or AMD processor. Both platforms require 8GB RAM; 16GB and about 10GB free storage are recommended. On an 8GB Windows PC, notes generation uses more memory and takes longer, and the machine will feel less responsive while notes are running. A compatible Windows DirectML GPU with 4GB+ VRAM is optional — AutoDoc falls back to CPU transcription automatically.</div>
+      <div class="faq-answer">
+        <p><strong>8 GB RAM is supported. 16 GB+ is recommended for the best experience</strong> on both platforms. Plan for ~10 GB free for first-run model downloads. Intel Macs and Windows on ARM are not supported.</p>
+        <div class="req-table-wrap">
+          <table class="req-table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Minimum (supported)</th>
+                <th scope="col">Recommended (best experience)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">macOS</th>
+                <td>macOS 14+ · Apple Silicon (M1+) · 8 GB RAM</td>
+                <td>16 GB+ Apple Silicon</td>
+              </tr>
+              <tr>
+                <th scope="row">Windows</th>
+                <td>Windows 10+ · 64-bit x64 · 8 GB RAM</td>
+                <td>16 GB+ RAM · 8+ logical processors · optional DirectML GPU with 4 GB+ VRAM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>On 8 GB machines, AutoDoc uses a smaller local notes model and a lower-impact path: audio is processed sequentially and notes wait until transcription finishes. Expect a longer wait after the meeting. A GPU on Windows can speed up transcription, but it does not replace the 16 GB+ RAM recommendation.</p>
+      </div>
     </div>
 
     <div class="faq-item">
