@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AutoDoc - Private AI meeting notes, recorded locally</title>
-  <meta name="description" content="AutoDoc records screen video, microphone, and system audio, then creates private AI meeting notes locally. No recorder bot, no cloud AI processing, encrypted on your computer.">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+  <title>AutoDoc | Open-source AI meeting notes for Mac and Windows</title>
+  <meta name="description" content="Open-source meeting notes for Mac and Windows, with local AI processing, editable summaries, timestamped screen playback, and PDF, Word, or Markdown export.">
   <link rel="canonical" href="https://getautodoc.com/">
-  <meta property="og:title" content="AutoDoc - Private AI meeting notes, recorded locally">
-  <meta property="og:description" content="Record, transcribe, summarize, search, and ask questions across your meetings with on-device AI.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260820">
+  <meta property="og:url" content="https://getautodoc.com/">
+  <meta property="og:title" content="AutoDoc | Open-source AI meeting notes for Mac and Windows">
+  <meta property="og:description" content="Open-source meeting notes with local AI processing, editable summaries, and timestamped screen playback.">
+  <meta property="og:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AutoDoc | Open-source AI meeting notes for Mac and Windows">
+  <meta name="twitter:description" content="Open-source meeting notes with local AI processing, editable summaries, and timestamped screen playback.">
+  <meta name="twitter:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta name="twitter:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <link rel="stylesheet" href="css/style.css?v=20260922c">
 </head>
 <body>
 
@@ -57,13 +66,14 @@
 </div>
 
 <section class="hero hero--center">
-  <div class="badge">Private meeting intelligence · local-first AI</div>
-  <p class="hero-category">Records, transcribes, summarizes, searches, and answers questions across your meetings, locally.</p>
-  <h1 class="hero-headline">Private AI meeting notes,<br><em>recorded locally.</em></h1>
-  <p class="hero-sub">AutoDoc records your screen alongside microphone and system audio — so you can see what was shared, not just read what was said. Local transcription and Ollama turn it all into structured notes on your computer. No recorder bot joins your call, and nothing leaves your computer.</p>
+  <div class="badge">Open-source meeting notes</div>
+  <h1 class="hero-headline">AutoDoc</h1>
+  <p class="hero-category">An open-source Granola alternative for Mac and Windows, with local AI processing and timestamped video playback.</p>
+  <p class="hero-sub">Record what was said and shown. AutoDoc turns meeting audio into editable notes, while the screen recording lets you replay the moment behind a timestamp. Transcription, notes, and Ask AI run on your computer, not through a cloud AI service.</p>
+  <p class="hero-sub">No meeting bot, AutoDoc account, or AI API key required.</p>
   <div class="hero-pills">
     <span class="hero-pill">Zoom · Meet · Teams · Webex · Slack · Discord</span>
-    <span class="hero-pill">Works offline</span>
+    <span class="hero-pill">Offline after setup</span>
     <span class="hero-pill">AES-256-GCM encrypted</span>
     <span class="hero-pill">Open source · AGPL-3.0</span>
   </div>
@@ -91,7 +101,7 @@
     <div class="proof-card">
       <span class="proof-card-kicker">Storage</span>
       <strong>Encrypted on disk</strong>
-      <span>Keys are protected by macOS Keychain or Windows DPAPI.</span>
+      <span>AES-256-GCM on disk. macOS Keychain or Windows DPAPI protects the key when available; otherwise the key stays local without operating-system protection.</span>
     </div>
   </div>
 </section>
@@ -111,13 +121,13 @@
   <div class="section-header feature-showcase-header">
     <div class="section-label">Core features</div>
     <h2 class="section-title">Capture the meeting. Keep the meeting.</h2>
-    <p class="section-desc">AutoDoc records the meeting like a local screen capture, then turns the conversation into structured notes — while keeping the screen recording, so you never lose what people were looking at.</p>
+    <p class="section-desc">AutoDoc records screen video and meeting audio, creates editable notes, and lets you replay a timestamp or ask a question.</p>
   </div>
 
   <div class="demo-showcase" aria-label="AutoDoc product walkthrough">
     <div class="demo-video-frame">
-      <video controls playsinline preload="metadata" poster="assets/screenshots/meeting-review.png?v=20260604" aria-label="AutoDoc core features demo">
-        <source src="assets/videos/autodoc-core-features-demo.mp4" type="video/mp4">
+      <video controls playsinline preload="metadata" poster="assets/screenshots/poster-app-only-v1.2.png" width="1920" height="1080" aria-label="AutoDoc product demo">
+        <source src="assets/videos/autodoc-demo-v1.2.mp4" type="video/mp4">
         Your browser does not support embedded video.
       </video>
     </div>
@@ -144,19 +154,19 @@
 <section class="section fade-in">
   <div class="grid-2">
     <div class="section-text">
-      <div class="section-label">Summaries</div>
-      <h2 class="section-title">The notes you'd write <em>if you had time.</em></h2>
-      <p class="section-desc">After every meeting, AutoDoc turns the conversation into structured notes — organized into five categories you can edit inline.</p>
+      <div class="section-label">Notes</div>
+      <h2 class="section-title">Notes you can <em>work with.</em></h2>
+      <p class="section-desc">Start with a summary, then explore the conversation by topic. Edit the details, jump from an available timestamp to the recording, or export your notes as PDF, Word, or Markdown.</p>
       <div class="note-tags">
-        <span class="note-tag">Decisions</span>
-        <span class="note-tag">Action Items</span>
-        <span class="note-tag">Information Shared</span>
-        <span class="note-tag">Discussion</span>
-        <span class="note-tag">Status Updates</span>
+        <span class="note-tag">Summary</span>
+        <span class="note-tag">Topics</span>
+        <span class="note-tag">Editable details</span>
+        <span class="note-tag">Timestamp playback</span>
+        <span class="note-tag">Export</span>
       </div>
     </div>
     <div class="screenshot screenshot--dark">
-      <img src="assets/screenshots/meeting-review.png?v=20260604" alt="AutoDoc structured meeting summary">
+      <img src="assets/screenshots/notes-v1.2.png" width="2160" height="1360" alt="AutoDoc Notes with a summary and conversation topics" loading="lazy">
     </div>
   </div>
 </section>
@@ -164,12 +174,12 @@
 <section class="section section--deep fade-in">
   <div class="grid-2 grid-2--reverse-mobile">
     <div class="screenshot screenshot--dark">
-      <img src="assets/screenshots/search-page.png?v=20260604" alt="AutoDoc full-text search across meetings">
+      <img src="assets/screenshots/search-v1.2.png" width="2160" height="1360" alt="AutoDoc search results" loading="lazy">
     </div>
     <div class="section-text">
       <div class="section-label">Search</div>
       <h2 class="section-title">Find the exact <em>moment.</em></h2>
-      <p class="section-desc">Search across every transcript and note. Each result deep-links to the matching line, switches to the right tab, and highlights the phrase instantly.</p>
+      <p class="section-desc">Search your transcripts and notes, then open the matching meeting to review the context.</p>
     </div>
   </div>
 </section>
@@ -179,11 +189,10 @@
     <div class="section-text">
       <div class="section-label">Ask AI</div>
       <h2 class="section-title">Ask your <em>meetings.</em></h2>
-      <p class="section-desc">"What did we decide about the Q3 roadmap?" Ask in plain English and get answers grounded in what was actually said across one meeting or your full history. Separate from keyword search, powered by local Ollama.</p>
+      <p class="section-desc">Ask questions across past meetings and review answers grounded in your meeting history. Retrieval and responses run locally through Ollama.</p>
     </div>
-    <div class="chat-preview" role="img" aria-label="Example Ask AI conversation">
-      <div class="chat-bubble chat-bubble--user">What action items came out of yesterday's product sync?</div>
-      <div class="chat-bubble chat-bubble--assistant">From Product sync (Mar 14): Maya will tighten onboarding copy by Friday. Chris will publish the launch checklist before the next release.</div>
+    <div class="screenshot screenshot--dark">
+      <img src="assets/screenshots/ask-ai-v1.2.png" width="2160" height="1360" alt="AutoDoc Ask AI answers" loading="lazy">
     </div>
   </div>
 </section>
@@ -191,12 +200,12 @@
 <section class="section section--deep fade-in">
   <div class="grid-2 grid-2--reverse-mobile">
     <div class="screenshot screenshot--dark">
-      <img src="assets/screenshots/transcript-view.png?v=20260604" alt="AutoDoc transcript with speaker diarization">
+      <img src="assets/screenshots/transcript-playback-v1.2.png" width="2160" height="2100" alt="AutoDoc transcript with video playback and Me/Them audio source labels" loading="lazy">
     </div>
     <div class="section-text">
       <div class="section-label">Review</div>
       <h2 class="section-title">The full <em>picture.</em></h2>
-      <p class="section-desc">A transcript tells you what was said. AutoDoc also keeps what was shown. Watch the recording next to the transcript, and jump to any moment by clicking a line or a note — so demos, slides, dashboards, and screen shares keep their context.</p>
+      <p class="section-desc">Open the recording in the Transcript tab, or select an available timestamp in your notes to revisit what was said and shown. Microphone audio is labeled Me and combined system audio is labeled Them. AutoDoc does not identify each remote participant.</p>
     </div>
   </div>
 </section>
@@ -206,76 +215,21 @@
     <div class="section-text">
       <div class="section-label">Upcoming</div>
       <h2 class="section-title">Your calendar, <em>ready to record.</em></h2>
-      <p class="section-desc">Connect Google Calendar or Microsoft Outlook to see upcoming meetings, auto-name recordings, and choose whether a meeting records once, for a whole recurring series, or only when you say so.</p>
+      <p class="section-desc">Connect Google Calendar or Microsoft Outlook to see upcoming meetings, auto-name recordings, and choose whether a meeting records once, for a whole recurring series, or only when you say so. Detection offers to record. A meeting you already set to record once or for the series can start without another prompt.</p>
     </div>
     <div class="screenshot screenshot--dark">
-      <img src="assets/screenshots/dashboard.png?v=20260604" alt="AutoDoc upcoming meetings and recording controls">
+      <img src="assets/screenshots/calendar-v1.2.png" width="2160" height="1360" alt="AutoDoc calendar with optional auto-record controls" loading="lazy">
     </div>
   </div>
 </section>
 
 <section class="section section--center fade-in">
   <div class="section-header">
-    <div class="section-label">AutoDoc vs cloud note takers</div>
-    <h2 class="section-title">Same meeting notes. <em>Better defaults.</em></h2>
-    <p class="section-desc">Most AI note takers optimize for convenience by moving your meeting into their service. AutoDoc gives you the assistant without giving up the recording.</p>
-  </div>
-  <div class="compare-highlights" aria-label="AutoDoc advantages">
-    <div class="compare-highlight">
-      <strong>No bot</strong>
-      <span>Nothing joins your call or appears in the participant list.</span>
-    </div>
-    <div class="compare-highlight">
-      <strong>Local AI</strong>
-      <span>Transcription and Ollama run on your computer, not vendor servers.</span>
-    </div>
-    <div class="compare-highlight">
-      <strong>Screen context</strong>
-      <span>Keep the visual record of what was shared, synced with transcript and notes.</span>
-    </div>
-  </div>
-  <div class="compare-table-wrap">
-    <table class="compare-table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Cloud note takers</th>
-          <th scope="col"><span class="compare-autodoc-label">AutoDoc</span></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Joins your call</td>
-          <td><span class="compare-miss">Recording bot in the participant list</span></td>
-          <td><span class="compare-win">Captures from your device, no bot</span></td>
-        </tr>
-        <tr>
-          <td>AI processing</td>
-          <td><span class="compare-miss">Runs on vendor servers</span></td>
-          <td><span class="compare-win">Local transcription + Ollama</span></td>
-        </tr>
-        <tr>
-          <td>Your files</td>
-          <td><span class="compare-miss">Stored in their cloud</span></td>
-          <td><span class="compare-win">Encrypted on your machine</span></td>
-        </tr>
-        <tr>
-          <td>Visual context</td>
-          <td><span class="compare-miss">Transcript-only summary</span></td>
-          <td><span class="compare-win">Screen video synced with the transcript</span></td>
-        </tr>
-        <tr>
-          <td>Offline</td>
-          <td><span class="compare-miss">Requires connectivity</span></td>
-          <td><span class="compare-win">Record and process without internet</span></td>
-        </tr>
-        <tr>
-          <td>Meeting notes</td>
-          <td><span class="compare-miss">Generic transcript summary</span></td>
-          <td><span class="compare-win">Five structured categories + Ask AI</span></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="section-label">Comparison</div>
+    <h2 class="section-title">Looking for a Granola alternative?</h2>
+    <p class="section-desc">AutoDoc is built around local AI processing and recordings you can revisit. Transcription, notes, and Ask AI run on your computer, and available timestamps take you back to the screen recording. It is free and open source, with ready-to-use Mac and Windows installers.</p>
+    <p class="section-desc">Local AI needs local resources: allow roughly 10 GB for initial setup and extra space for recordings. 8 GB RAM is supported; 16 GB or more is recommended.</p>
+    <p><a href="/granola-alternative">Compare AutoDoc and Granola</a></p>
   </div>
 </section>
 
@@ -315,14 +269,14 @@
         What is AutoDoc?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">AutoDoc is a local-first desktop app for macOS and Windows. It records screen video, microphone, and system audio, transcribes on-device, identifies speakers, and generates structured AI notes with Ollama — all on your machine.</div>
+      <div class="faq-answer">AutoDoc is a free, open-source meeting notes app for macOS and Windows, built by Duet Display. It records screen video, microphone, and system audio, then transcribes the audio and creates editable notes locally. You can replay recording moments from timestamps, search your meetings, and ask questions with Ask AI.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button" aria-expanded="false">
         What's the difference between Search and Ask AI?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer"><strong>Search</strong> finds exact phrases across transcripts and notes with deep links to the source moment. <strong>Ask AI</strong> is a conversational assistant that answers questions in plain English, grounded in your meeting history and calendar.</div>
+      <div class="faq-answer"><strong>Search</strong> finds matching text in transcripts and notes, then opens the meeting so you can review the context. <strong>Ask AI</strong> answers questions from your meeting history. Retrieval and responses run locally through Ollama. Review the answers before you rely on them.</div>
     </div>
     <div class="faq-item">
       <button class="faq-question" type="button" aria-expanded="false">
@@ -353,8 +307,8 @@
   <div class="closing-grid">
     <div class="closing-card">
       <div class="section-label">Built by</div>
-      <h2 class="closing-title">Ex-Apple engineers. Creators of <em>Duet.</em></h2>
-      <p>We're the team behind <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link text-link--inline">Duet</a> — a desktop app trusted by users worldwide. AutoDoc is our answer to meeting tools that treat your conversations as their data.</p>
+      <h2 class="closing-title">Ex-Apple engineers. Creators of <em>Duet Display.</em></h2>
+      <p>We're the team behind <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link text-link--inline">Duet Display</a>. We built AutoDoc to keep meeting processing on your computer and make the software open for anyone to inspect and contribute to.</p>
       <a href="/about" class="text-link">Learn more about us →</a>
     </div>
     <div class="closing-card closing-card--availability">
@@ -391,6 +345,7 @@
     <a href="/about">About</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
+    <a href="/granola-alternative">Compare AutoDoc and Granola</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="footer-github" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>

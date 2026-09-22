@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <title>Privacy — AutoDoc</title>
   <meta name="description" content="AutoDoc is local-first by design. Meeting content stays on your device, calendar access is optional, and analytics are opt-in.">
   <link rel="canonical" href="https://getautodoc.com/privacy">
   <meta property="og:title" content="Privacy — AutoDoc">
   <meta property="og:description" content="Local-first meeting notes with optional calendar access and opt-in diagnostics.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260629b">
+  <meta property="og:url" content="https://getautodoc.com/privacy">
+  <meta property="og:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta name="twitter:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <link rel="stylesheet" href="css/style.css?v=20260922c">
 </head>
 <body>
 
@@ -87,7 +94,7 @@
         </div>
         <div class="checklist-item">
           <span class="checklist-icon">✓</span>
-          <span>AES-256-GCM encryption with keys protected by macOS Keychain or Windows DPAPI</span>
+          <span>AES-256-GCM encryption. macOS Keychain or Windows DPAPI protects the key when available; otherwise the key stays local without operating-system protection</span>
         </div>
       </div>
     </div>
@@ -220,6 +227,7 @@
     <a href="/about">About</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
+    <a href="/granola-alternative">Compare AutoDoc and Granola</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="footer-github" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>

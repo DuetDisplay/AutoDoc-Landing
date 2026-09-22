@@ -18,6 +18,9 @@ CLEAN_URLS = {
     "/privacy": "privacy.html",
     "/terms": "terms.html",
     "/faq": "faq.html",
+    "/granola-alternative": "granola-alternative.html",
+    "/download-mac": "download-mac.html",
+    "/download-windows": "download-windows.html",
 }
 EXCLUDED_FILE_PREFIXES = ("._",)
 HTML_CONTENT_TYPES = ("text/html", "application/xhtml+xml")

@@ -3,6 +3,47 @@
    css/style.css
    ============================================================ */
 
+/* Self-hosted Inter (rsms, OFL) and JetBrains Mono (OFL). */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/InterVariable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: italic;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('../assets/fonts/InterVariable-Italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../assets/fonts/JetBrainsMono-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../assets/fonts/JetBrainsMono-SemiBold.woff2') format('woff2');
+}
+
 /* ============================================================
    1. DESIGN TOKENS
    ============================================================ */
@@ -611,6 +652,20 @@ button {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
+}
+
+.media-caption {
+  margin-top: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.original-size {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
 }
 
 .hero-preview {
@@ -1368,6 +1423,7 @@ button {
   aspect-ratio: 16 / 9;
   height: auto;
   display: block;
+  object-fit: contain;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: #FFFFFF;
@@ -1537,8 +1593,8 @@ button {
   display: flex;
   align-items: center;
   gap: 14px;
-  width: 100%;
-  max-width: 400px;
+  width: min(100%, 400px);
+  max-width: 100%;
   padding: 14px 14px 14px 16px;
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid rgba(26, 26, 23, 0.06);
@@ -1800,19 +1856,25 @@ button {
   width: 28%;
 }
 
+.compare-table th:nth-child(2),
 .compare-table td:nth-child(2) {
-  color: var(--text-tertiary);
-}
-
-.compare-table th:last-child,
-.compare-table td:last-child {
   background: rgba(232, 240, 232, 0.42);
   border-left: 1px solid rgba(122, 158, 126, 0.22);
 }
 
-.compare-table td:last-child {
+.compare-table th:nth-child(2) {
+  color: var(--sage-dark);
+  font-weight: 700;
+}
+
+.compare-table td:nth-child(2) {
   color: var(--sage-dark);
   font-weight: 650;
+}
+
+.compare-table td:last-child {
+  color: var(--text-tertiary);
+  font-weight: 450;
 }
 
 .compare-autodoc-label {
@@ -2331,12 +2393,17 @@ button {
 
   /* Grids — single column */
   .grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 32px;
   }
 
+  .grid-2 > *,
+  .grid-3 > * {
+    min-width: 0;
+  }
+
   .grid-3 {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
   }
 
@@ -2415,6 +2482,21 @@ button {
   .footer-links {
     flex-wrap: wrap;
     gap: 16px;
+  }
+
+  /* Centered flex children otherwise size to their text and spill past the viewport. */
+  .hero--center > *,
+  .page-hero--center > *,
+  .section--center > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .badge,
+  .hero-pill {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
   }
 
   /* Typography adjustments */
@@ -2501,7 +2583,7 @@ button {
 
   .feature-grid,
   .use-case-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .compare-table th,

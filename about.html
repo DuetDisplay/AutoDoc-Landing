@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <title>About — AutoDoc</title>
-  <meta name="description" content="AutoDoc is built by ex-Apple engineers and the creators of Duet. A local AI meeting assistant with 100% on-device processing.">
+  <meta name="description" content="AutoDoc is built by Duet Display. Local meeting notes for Mac and Windows, with open-source code and replayable recordings.">
   <link rel="canonical" href="https://getautodoc.com/about">
   <meta property="og:title" content="About — AutoDoc">
-  <meta property="og:description" content="Built by ex-Apple engineers and the creators of Duet.">
+  <meta property="og:description" content="Built by Duet Display. Local meeting notes you can inspect and replay.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260820">
+  <meta property="og:url" content="https://getautodoc.com/about">
+  <meta property="og:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta name="twitter:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <link rel="stylesheet" href="css/style.css?v=20260922c">
 </head>
 <body>
 
@@ -59,16 +66,16 @@
 <section class="page-hero page-hero--center">
   <div class="section-label">About</div>
   <h1 class="hero-headline">Meetings deserve <em>better.</em></h1>
-  <p class="hero-sub">Every meeting tool we tried was built to feed data into someone else's AI platform. We wanted something different — structured notes, search, and Ask AI that run entirely on your machine, without making you dependent on big tech to do it.</p>
+  <p class="hero-sub">We wanted meeting notes processed on the computer, with the screen recording still available when a summary needs to be checked. AutoDoc is open source, so the processing path can be inspected.</p>
 </section>
 
 <section class="section fade-in">
   <div class="grid-2">
     <div>
       <h2 class="section-title origin-title">From <span class="brand-word brand-word--duet">Duet</span> to <span class="brand-word brand-word--autodoc">AutoDoc</span></h2>
-      <p class="section-desc" style="margin-bottom: 20px;">We're the same ex-Apple engineers behind <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link text-link--inline">Duet</a> — a desktop app trusted by users worldwide. After years of building software people rely on every day, we kept running into the same problem: meetings generate the most important decisions in a company, but the tools for capturing them are either bad or exploitative.</p>
+      <p class="section-desc" style="margin-bottom: 20px;">We're the same ex-Apple engineers behind <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link text-link--inline">Duet Display</a>. We wanted AI meeting notes that stay on the computer, with the original screen recording still there when a note needs to be checked.</p>
       <p class="section-desc">AutoDoc is our take on what a meeting tool should be. Structured notes that surface what actually matters. Platform-optimized transcription and Ollama running locally — not in the cloud. Search when you need the exact phrase, Ask AI when you need the answer.</p>
-      <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link" style="display:inline-block; margin-top:20px;">Meet the team behind Duet →</a>
+      <a href="https://www.duetdisplay.com/about-us" target="_blank" rel="noopener" class="text-link" style="display:inline-block; margin-top:20px;">Meet the team behind Duet Display →</a>
     </div>
     <div class="stats-card">
       <div>
@@ -98,7 +105,7 @@
   <div class="grid-3" style="margin-top: 40px;">
     <div class="principle-card">
       <div class="principle-title">Notes should<br>be useful.</div>
-      <p class="principle-desc">A wall of transcript isn't a meeting note. AutoDoc organizes meetings into decisions, action items, information, discussion, and status updates — the things you'd actually write down if you had time.</p>
+      <p class="principle-desc">A wall of transcript isn't a meeting note. AutoDoc writes a summary and topic sections you can edit, including decisions and next steps.</p>
     </div>
     <div class="principle-card">
       <div class="principle-title">Your data,<br>your machine.</div>
@@ -113,7 +120,7 @@
 
 <section class="section cta-section fade-in">
   <h2 class="section-title">Try it <em>yourself.</em></h2>
-  <p class="section-desc">Open source · 100% on-device · macOS and Windows</p>
+  <p class="section-desc">Open source · Processed on your computer · macOS and Windows</p>
   <div class="cta-buttons">
     <a href="/download-mac" class="btn btn-primary btn-download btn-icon">Download for macOS</a>
     <a href="/download-windows" class="btn btn-primary btn-download btn-icon">Download for Windows</a>
@@ -142,6 +149,7 @@
     <a href="/about">About</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
+    <a href="/granola-alternative">Compare AutoDoc and Granola</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="footer-github" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>

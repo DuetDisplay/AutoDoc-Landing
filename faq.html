@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" href="assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
   <title>FAQ — AutoDoc</title>
   <meta name="description" content="Answers about AutoDoc: on-device AI, meeting detection, Search vs Ask AI, encryption, calendars, system requirements, and privacy.">
   <link rel="canonical" href="https://getautodoc.com/faq">
-  <meta property="og:title" content="FAQ — AutoDoc">
-  <meta property="og:description" content="Common questions about AutoDoc's local AI meeting assistant.">
   <meta property="og:type" content="website">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260820">
+  <meta property="og:url" content="https://getautodoc.com/faq">
+  <meta property="og:title" content="FAQ — AutoDoc">
+  <meta property="og:description" content="Answers about local processing, notes, exports, encryption, and system requirements.">
+  <meta property="og:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ — AutoDoc">
+  <meta name="twitter:description" content="Answers about local processing, notes, exports, encryption, and system requirements.">
+  <meta name="twitter:image" content="https://getautodoc.com/assets/social/autodoc-v1.2-1200x630.png">
+  <meta name="twitter:image:alt" content="AutoDoc Notes with a fictional meeting summary and timestamped topics">
+  <link rel="stylesheet" href="css/style.css?v=20260922c">
 </head>
 <body>
 
@@ -70,15 +79,15 @@
         What is AutoDoc?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">AutoDoc is a local-first desktop meeting assistant for macOS and Windows. It records screen video, microphone, and system audio, transcribes on-device, identifies speakers, and generates structured notes with Ollama — all on your computer. You can search across meetings, ask questions with Ask AI, and optionally connect Google Calendar or Microsoft Outlook.</div>
+      <div class="faq-answer">AutoDoc is a free, open-source meeting notes app for macOS and Windows, built by Duet Display. It records screen video, microphone, and system audio, then transcribes the audio and creates editable notes locally. You can replay recording moments from timestamps, search your meetings, and ask questions with Ask AI.</div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" type="button" aria-expanded="false">
-        How is AutoDoc different from typical cloud meeting tools?
+        How is AutoDoc different from cloud-based meeting notes?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Cloud tools usually send your audio to their servers, join as a recording bot, and leave you with a transcript-first summary. AutoDoc captures screen video, microphone, and system audio from your device, so you can review what was shown alongside what was said. AI runs locally, files are encrypted on disk, and meeting content is never sent to the cloud for transcription or summarization.</div>
+      <div class="faq-answer">AutoDoc runs transcription, notes, and Ask AI locally and keeps replayable screen recordings on your computer. That requires local storage, model downloads, and processing resources. Other products make different tradeoffs; see our <a href="/granola-alternative">sourced Granola comparison</a> for a specific example.</div>
     </div>
 
     <div class="faq-item">
@@ -86,7 +95,7 @@
         What's the difference between Search and Ask AI?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer"><strong>Search</strong> is keyword lookup across all transcripts and notes — every match deep-links to the exact line. <strong>Ask AI</strong> is a chat interface where you ask questions in plain English; it retrieves relevant meetings and answers using local Ollama, grounded in your transcripts, structured notes, and calendar.</div>
+      <div class="faq-answer"><strong>Search</strong> finds matching text in transcripts and notes, then opens the meeting so you can review the context. <strong>Ask AI</strong> answers questions from your meeting history. Retrieval and responses run locally through Ollama. Review the answers before you rely on them.</div>
     </div>
 
     <div class="faq-item">
@@ -118,15 +127,39 @@
         Does AutoDoc work offline?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Yes, after initial setup. Once the platform-specific transcription model and Ollama model are downloaded, you can record, transcribe, summarize, search, and use Ask AI without an internet connection. Calendar sync requires connectivity when you connect an account.</div>
+      <div class="faq-answer">Recording, transcription, and notes work offline after setup. Initial setup downloads local models and runtimes. App and model updates, optional Google or Microsoft calendar connections, and opt-in diagnostics also use the network. See our <a href="/privacy">privacy details</a>.</div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question" type="button" aria-expanded="false">
-        What note categories does AutoDoc produce?
+        What do meeting notes look like?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Structured notes are organized into five categories: Decisions, Action Items, Information Shared, Discussion, and Status Updates. Every note is fully editable after generation.</div>
+      <div class="faq-answer">AutoDoc creates a summary and conversation topics with editable details. Available timestamps let you check the corresponding moment in the recording. Review generated notes before relying on them.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Will my existing notes change after updating?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Updating does not automatically regenerate your existing meeting notes. You can reprocess a meeting when you want to generate new notes. Older notes remain supported.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Can I export my notes?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Yes. Copy notes as plain text or export them as PDF, Word, or Markdown.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Does AutoDoc identify each speaker?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">AutoDoc labels microphone audio as Me and combined system audio as Them. It does not identify individual remote participants. Manual label changes and calendar name suggestions do not separate voices within the system-audio track.</div>
     </div>
 
     <div class="faq-item">
@@ -150,7 +183,7 @@
         How is my data encrypted?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Recordings, transcripts, notes, and metadata are encrypted with AES-256-GCM. Electron safeStorage protects the encryption key with macOS Keychain on Mac and DPAPI on Windows. Media files use chunked encryption so playback can decrypt on the fly.</div>
+      <div class="faq-answer">AutoDoc encrypts stored meeting data with AES-256-GCM. When operating-system credential storage is available, macOS Keychain or Windows DPAPI protects the encryption key. Otherwise, the key is stored locally without operating-system protection. Files you export are separate from AutoDoc's encrypted storage.</div>
     </div>
 
     <div class="faq-item open" id="requirements">
@@ -247,6 +280,7 @@
     <a href="/about">About</a>
     <a href="/privacy">Privacy</a>
     <a href="/terms">Terms</a>
+    <a href="/granola-alternative">Compare AutoDoc and Granola</a>
     <a href="https://github.com/DuetDisplay/AutoDoc#readme" class="footer-github" target="_blank" rel="noopener">GitHub</a>
   </div>
 </footer>
