@@ -119,7 +119,19 @@
         How does on-device AI work?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <div class="faq-answer">Windows uses Parakeet TDT 0.6B v3 and automatically selects DirectML GPU acceleration or a CPU-optimized model. Apple Silicon Macs use MLX Whisper with distil-large-v3. Notes and Ask AI use a dedicated local Ollama instance that AutoDoc manages separately from any Ollama you may have installed. No meeting content is sent to the cloud for AI inference.</div>
+      <div class="faq-answer">For English, Windows uses Parakeet and Apple Silicon Macs use MLX Whisper with Distil Whisper. Other supported languages use Canary or Whisper large-v3-turbo, depending on the language and hardware. AutoDoc selects the processing path for your computer. Notes and Ask AI use a dedicated local Ollama instance that AutoDoc manages separately from any Ollama you may have installed. No meeting content is sent to the cloud for AI inference.</div>
+    </div>
+
+    <div class="faq-item" id="languages">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Which meeting languages does AutoDoc support?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">
+        <p>AutoDoc supports 27 meeting languages on supported hardware. Choose your meeting language during setup or in Settings. Your selection controls transcription, meeting notes, and Ask AI answers. Settings shows which languages your computer supports and which models need downloading.</p>
+        <p>English, Bulgarian, Croatian, Czech, Danish, Dutch, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Latvian, Lithuanian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, Swedish, Ukrainian, Japanese, Simplified Chinese, and Korean.</p>
+        <p>Language availability depends on your hardware. 8 GB Macs and lower-spec Windows PCs remain English-only. On Windows, CPU-only machines with fewer than eight logical processors or less than 16 GB RAM use the English-only processing profile. See the <a href="/faq#requirements">system requirements</a> and <a href="https://github.com/DuetDisplay/AutoDoc/releases/latest">latest release notes</a> for language-specific limitations.</p>
+      </div>
     </div>
 
     <div class="faq-item">
@@ -136,6 +148,14 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="faq-answer">AutoDoc creates a summary and conversation topics with editable details. Available timestamps let you check the corresponding moment in the recording. Review generated notes before relying on them.</div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" type="button" aria-expanded="false">
+        Does AutoDoc include action items in its notes?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer">Action items are currently omitted from generated notes while Next Steps is disabled. Information classified as an action item can also be omitted. Review the recording and transcript when you need to check follow-up commitments. See the <a href="https://github.com/DuetDisplay/AutoDoc/releases/latest">latest release notes</a> for known issues.</div>
     </div>
 
     <div class="faq-item">
@@ -193,6 +213,7 @@
       </button>
       <div class="faq-answer">
         <p><strong>8 GB RAM is supported. 16 GB+ is recommended for the best experience</strong> on both platforms. Plan for ~10 GB free for first-run model downloads. Intel Macs and Windows on ARM are not supported.</p>
+        <p><strong>Multilingual processing:</strong> 8 GB Macs and lower-spec Windows PCs remain English-only. On Windows, CPU-only machines with fewer than eight logical processors or less than 16 GB RAM use the English-only processing profile. Check Settings for availability on your computer and <a href="/faq#languages">see supported meeting languages</a>.</p>
         <div class="req-table-wrap">
           <table class="req-table">
             <thead>
@@ -285,6 +306,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260601"></script>
+<script src="js/main.js?v=20261016"></script>
 </body>
 </html>

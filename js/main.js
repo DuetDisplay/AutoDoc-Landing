@@ -45,4 +45,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  function openLinkedQuestion() {
+    let id;
+    try {
+      id = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      return;
+    }
+    const item = id && document.getElementById(id);
+    if (!item || !item.classList.contains('faq-item')) return;
+
+    item.closest('.faq-list')?.querySelectorAll('.faq-item').forEach((other) => {
+      const isTarget = other === item;
+      other.classList.toggle('open', isTarget);
+      other.querySelector('.faq-question')?.setAttribute('aria-expanded', String(isTarget));
+    });
+  }
+
+  openLinkedQuestion();
+  window.addEventListener('hashchange', openLinkedQuestion);
 });
