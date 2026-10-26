@@ -60,7 +60,6 @@
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--bg-card);
-  transition: opacity 220ms ease;
 }
 
 .star-ask h2 {
@@ -84,11 +83,6 @@
 
 .star-ask .btn:hover {
   background: var(--bg-deep);
-}
-
-.star-ask.is-leaving {
-  opacity: 0;
-  pointer-events: none;
 }
 
 .download-help {
@@ -125,11 +119,5 @@
 
   .star-ask {
     padding: 24px 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .star-ask {
-    transition: none;
   }
 }

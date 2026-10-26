@@ -2,24 +2,9 @@
   const card = document.querySelector('.star-ask');
   const starLink = document.getElementById('star-link');
   const title = document.getElementById('star-ask-title');
-  let thanked = false;
-  let leftPage = false;
-  let dismissing = false;
-
-  function dismissOnReturn() {
-    if (!thanked || !leftPage || dismissing || document.visibilityState !== 'visible') return;
-    dismissing = true;
-    card.classList.add('is-leaving');
-    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 220;
-    window.setTimeout(() => {
-      if (document.activeElement === title) document.getElementById('manual-release-link').focus({ preventScroll: true });
-      card.hidden = true;
-    }, delay);
-  }
 
   function thankForSupport(event) {
     if (event.defaultPrevented || event.altKey || event.button > 1) return;
-    thanked = true;
     title.textContent = 'Thanks for the support!';
     card.querySelector('.star-ask-text').hidden = true;
     starLink.hidden = true;
@@ -29,13 +14,6 @@
 
   starLink.addEventListener('click', thankForSupport);
   starLink.addEventListener('auxclick', thankForSupport);
-
-  window.addEventListener('blur', () => { if (thanked) leftPage = true; });
-  window.addEventListener('focus', dismissOnReturn);
-  document.addEventListener('visibilitychange', () => {
-    if (thanked && document.visibilityState === 'hidden') leftPage = true;
-    else dismissOnReturn();
-  });
 
   const platform = document.body.dataset.downloadPlatform;
   const label = platform === 'mac' ? 'macOS' : 'Windows';
