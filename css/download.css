@@ -1,0 +1,135 @@
+.download-page {
+  min-height: 100vh;
+  padding-top: 56px;
+  padding-bottom: 48px;
+}
+
+.download-page .hero-headline {
+  max-width: 760px;
+}
+
+.download-page .hero-sub {
+  max-width: 560px;
+}
+
+.download-page .btn {
+  min-height: 44px;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.install-steps {
+  width: min(520px, 100%);
+  margin-top: 40px;
+  text-align: left;
+}
+
+.install-steps h2 {
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.install-steps ol {
+  list-style: decimal;
+  padding-left: 24px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.install-steps li {
+  padding-left: 6px;
+  margin-bottom: 10px;
+}
+
+.install-steps li::marker {
+  color: var(--sage-dark);
+  font-weight: 600;
+}
+
+.install-steps strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.star-ask {
+  width: min(520px, 100%);
+  margin-top: 28px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-card);
+  transition: opacity 220ms ease;
+}
+
+.star-ask h2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.star-ask-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.star-ask .btn {
+  background: var(--bg-card);
+  border-color: var(--border-strong);
+}
+
+.star-ask .btn:hover {
+  background: var(--bg-deep);
+}
+
+.star-ask.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.download-help {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Preserve the native hidden attribute on flex buttons. */
+.download-page [hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .download-page {
+    padding: 36px 20px;
+  }
+
+  .download-page .hero-headline {
+    font-size: 36px;
+  }
+
+  .star-ask {
+    padding: 24px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-ask {
+    transition: none;
+  }
+}

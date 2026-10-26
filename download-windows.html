@@ -7,47 +7,32 @@
   <title>Downloading AutoDoc for Windows</title>
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="css/style.css?v=20260922c">
+  <link rel="stylesheet" href="css/download.css?v=20261026a">
+  <script src="js/download.js?v=20261026a" defer></script>
 </head>
-<body>
-<section class="page-hero page-hero--center">
+<body data-download-platform="windows">
+<main class="page-hero page-hero--center download-page">
   <div class="section-label">Download</div>
   <h1 class="hero-headline">Preparing your <em>Windows download.</em></h1>
-  <p class="hero-sub">AutoDoc is finding the latest Windows installer on GitHub. If the download does not start, open the latest release manually.</p>
+  <p id="download-status" class="hero-sub" role="status">Finding the latest Windows installer. If your download doesn't start, open the latest release below.</p>
   <div class="hero-ctas">
     <a id="manual-release-link" href="https://github.com/DuetDisplay/AutoDoc/releases/latest" class="btn btn-github btn-icon" target="_blank" rel="noopener">Open latest release</a>
     <a href="/" class="btn btn-secondary">Back to AutoDoc</a>
   </div>
-</section>
-<script>
-(() => {
-  const latestReleaseUrl = 'https://github.com/DuetDisplay/AutoDoc/releases/latest';
-  const latestReleaseApi = 'https://api.github.com/repos/DuetDisplay/AutoDoc/releases/latest';
-
-  fetch(latestReleaseApi, {
-    headers: {
-      Accept: 'application/vnd.github+json'
-    }
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Latest release is not publicly available.');
-      }
-      return response.json();
-    })
-    .then((release) => {
-      const assets = Array.isArray(release.assets) ? release.assets : [];
-      const installer = assets.find((asset) => (
-        typeof asset.name === 'string' &&
-        /-setup\.exe$/i.test(asset.name) &&
-        typeof asset.browser_download_url === 'string'
-      ));
-
-      window.location.replace(installer ? installer.browser_download_url : latestReleaseUrl);
-    })
-    .catch(() => {
-      window.location.replace(latestReleaseUrl);
-    });
-})();
-</script>
+  <noscript><p class="download-help">Open the latest release above and choose the .exe installer for Windows.</p></noscript>
+  <section class="install-steps" aria-labelledby="install-title">
+    <h2 id="install-title">Get started on Windows</h2>
+    <ol>
+      <li>Open the downloaded <strong>.exe</strong> installer.</li>
+      <li>Follow the installer prompts to install <strong>AutoDoc</strong>.</li>
+      <li>Launch AutoDoc and follow the setup steps for permissions and local models.</li>
+    </ol>
+  </section>
+  <aside class="star-ask" aria-labelledby="star-ask-title">
+    <h2 id="star-ask-title" aria-live="polite" aria-atomic="true" tabindex="-1">Thanks for grabbing AutoDoc!</h2>
+    <p class="star-ask-text">We're a small team building it in the open. A star on GitHub helps other people find it.</p>
+    <a id="star-link" href="https://github.com/DuetDisplay/AutoDoc" class="btn btn-secondary" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">★</span> Star on GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+  </aside>
+</main>
 </body>
 </html>

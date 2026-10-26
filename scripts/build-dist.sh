@@ -41,7 +41,9 @@ copy_clean google650f43ebf7806a61.html dist/google650f43ebf7806a61.html
 copy_clean _headers dist/_headers
 
 copy_clean css/style.css dist/css/style.css
+copy_clean css/download.css dist/css/download.css
 copy_clean js/main.js dist/js/main.js
+copy_clean js/download.js dist/js/download.js
 
 copy_clean assets/screenshots/notes-v1.2.png dist/assets/screenshots/notes-v1.2.png
 copy_clean assets/screenshots/calendar-v1.2.png dist/assets/screenshots/calendar-v1.2.png
